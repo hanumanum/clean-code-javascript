@@ -55,7 +55,7 @@ const currentDate = moment().format('YYYY/MM/DD');
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Use the same vocabulary for the same type of variable
+### Օգտագործիր նույն բառարանը նույն փոփոխականների տեսակի համար
 
 **Վատ՝ **
 ```javascript
@@ -70,14 +70,14 @@ getUser();
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Use searchable names
-We will read more code than we will ever write. It's important that the code we
-do write is readable and searchable. By *not* naming variables that end up
-being meaningful for understanding our program, we hurt our readers.
-Make your names searchable. Tools like
-[buddy.js](https://github.com/danielstjules/buddy.js) and
+### Օգտագործիր որոնելի փոփոխականների անուններ
+Մենք պիտի ավելի շատ կոդ կարդանք, քան գրենք։ Կարևոր է մեր կոդը այնպես գրել, որ
+այն լինի ընթեռնելի և որոնելի։ Ծրագրում փոփոխականների լավ անունները կոգնեն հասկանալ
+ծրագրի նշանակությունը այն մարդկանց, ովքեր կցանկանան ուսումնասիրել քո ծրագրիը։ 
+Փոփոխականների անունները որոնելի գրիր։ Հետևյալ գործիքները՝ 
+[buddy.js](https://github.com/danielstjules/buddy.js), 
 [ESLint](https://github.com/eslint/eslint/blob/660e0918933e6e7fede26bc675a0763a6b357c94/docs/rules/no-magic-numbers.md)
-can help identify unnamed constants.
+կօգնեն հայտնաբերել չանվանված հաստատունները։
 
 **Վատ՝ **
 ```javascript
@@ -96,7 +96,7 @@ setTimeout(blastOff, MILLISECONDS_IN_A_DAY);
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Use explanatory variables
+### Օգտագործիր փոփոխականների "բացատրող" անուններ
 **Վատ՝ **
 ```javascript
 const address = 'One Infinite Loop, Cupertino 95014';
@@ -113,8 +113,8 @@ saveCityZipCode(city, zipCode);
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Avoid Mental Mapping
-Explicit is better than implicit.
+### Խուսափիր մտավոր կապ ստեղծելուց (Avoid Mental Mapping)
+Բացահայտը ծածկվածից լավ է
 
 **Վատ՝ **
 ```javascript
@@ -125,7 +125,7 @@ locations.forEach((l) => {
   // ...
   // ...
   // ...
-  // Wait, what is `l` for again?
+  // սպասիր, ի՞նչ է l-ը
   dispatch(l);
 });
 ```
@@ -144,9 +144,8 @@ locations.forEach((location) => {
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Don't add unneeded context
-If your class/object name tells you something, don't repeat that in your
-variable name.
+### Մի օգտագործիր ոչ անրաժեշտ բովանդակություն
+Եթե քո կլասը/օբյեկտը քեզ ասում է որևէ բան, մի կրկնիր այն փոփոխականների անուններում
 
 **Վատ՝ **
 ```javascript
