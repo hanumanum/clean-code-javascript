@@ -3,7 +3,7 @@
 ## Բովանդակություն
   1. [Ներածություն](#Ներածություն)
   2. [Փոփոխականներ](#Փոփոխականներ)
-  3. [Ֆունկցիաներ](#functions)
+  3. [Ֆունկցիաներ](#Ֆունկցիաներ)
   4. [Օբյեկտներ և տվյալների ստրուկտուրաներ](#objects-and-data-structures)
   5. [Կասներ](#classes)
   6. [SOLID](#solid)
@@ -41,6 +41,7 @@ shaped into its final form. Finally, we chisel away the imperfections when
 we review it with our peers. Don't beat yourself up for first drafts that need
 improvement. Beat up the code instead!
 
+
 ## **Փոփոխականներ**
 ###  Օգտագործիր իմաստալից և արտասանելի փոփոխականների անուններ
 
@@ -72,7 +73,7 @@ getUser();
 
 ### Օգտագործիր որոնելի փոփոխականների անուններ
 Մենք պիտի ավելի շատ կոդ կարդանք, քան գրենք։ Կարևոր է մեր կոդը այնպես գրել, որ
-այն լինի ընթեռնելի և որոնելի։ Ծրագրում փոփոխականների լավ անունները կոգնեն հասկանալ
+այն լինի ընթեռնելի և որոնելի։ Ծրագրում փոփոխականների լավ անունները կօգնեն հասկանալ
 ծրագրի նշանակությունը այն մարդկանց, ովքեր կցանկանան ուսումնասիրել քո ծրագրիը։ 
 Փոփոխականների անունները որոնելի գրիր։ Հետևյալ գործիքները՝ 
 [buddy.js](https://github.com/danielstjules/buddy.js), 
@@ -114,7 +115,7 @@ saveCityZipCode(city, zipCode);
 **[⬆ վեր](#Բովանդակություն)**
 
 ### Խուսափիր մտավոր կապ ստեղծելուց (Avoid Mental Mapping)
-Բացահայտը ծածկվածից լավ է
+Բացահայտը ավելի է քան թաքցվածը։
 
 **Վատ՝**
 ```javascript
@@ -145,7 +146,7 @@ locations.forEach((location) => {
 **[⬆ վեր](#Բովանդակություն)**
 
 ### Մի օգտագործիր ոչ անրաժեշտ բովանդակություն
-Եթե քո կլասը/օբյեկտը քեզ ասում է որևէ բան, մի կրկնիր այն փոփոխականների անուններում
+Եթե քո կլասը/օբյեկտը քեզ որևէ բան է ասում, մի կրկնիր նույնը փոփոխականների անուններում։
 
 **Վատ՝**
 ```javascript
@@ -174,11 +175,11 @@ function paintCar(car) {
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Use default arguments instead of short circuiting or conditionals
-Default arguments are often cleaner than short circuiting. Be aware that if you
-use them, your function will only provide default values for `undefined`
-arguments. Other "falsy" values such as `''`, `""`, `false`, `null`, `0`, and
-`NaN`, will not be replaced by a default value.
+### Օգտագործիր արգումենտների սկբնարժեքավորում, խուսափիր պայմանների միջոցով դրանք դնելուց
+Սկզբնարժեքավորված արգումենտները հաճախ ավելի հասկանալի են քան մյուս տարբերակները կարճ արժեքավորումը։ Նաև 
+Իմացիր, որ եթե կարճ արժեքավորում օգտագործես, ապա քո ֆունկցիան կտրամադրի լռությամբ արժեքներ միայն `undefined` արժեքի դեպքում։
+Այլ "կեղծոտ" արժեքները, ինչպիսիք են `''`, `""`, `false`, `null`, `0`, and
+`NaN` , չի փոխարինվի լռությամբ արժեքներով։
 
 **Վատ՝**
 ```javascript
@@ -198,7 +199,7 @@ function createMicrobrewery(name = 'Hipster Brew Co.') {
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-## **Functions**
+## **Ֆունկցիաներ**
 ### Function arguments (2 or fewer ideally)
 Limiting the amount of function parameters is incredibly important because it
 makes testing your function easier. Having more than three leads to a
