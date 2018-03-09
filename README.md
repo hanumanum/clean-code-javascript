@@ -64,7 +64,7 @@ getClientData();
 getCustomerRecord();
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 getUser();
 ```
@@ -79,14 +79,14 @@ getUser();
 [ESLint](https://github.com/eslint/eslint/blob/660e0918933e6e7fede26bc675a0763a6b357c94/docs/rules/no-magic-numbers.md)
 կօգնեն հայտնաբերել չանվանված հաստատունները։
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 // What the heck is 86400000 for?
 setTimeout(blastOff, 86400000);
 
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 // Declare them as capitalized named constants.
 const MILLISECONDS_IN_A_DAY = 86400000;
@@ -97,14 +97,14 @@ setTimeout(blastOff, MILLISECONDS_IN_A_DAY);
 **[⬆ վեր](#Բովանդակություն)**
 
 ### Օգտագործիր փոփոխականների "բացատրող" անուններ
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 const address = 'One Infinite Loop, Cupertino 95014';
 const cityZipCodeRegex = /^[^,\\]+[,\\\s]+(.+?)\s*(\d{5})?$/;
 saveCityZipCode(address.match(cityZipCodeRegex)[1], address.match(cityZipCodeRegex)[2]);
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 const address = 'One Infinite Loop, Cupertino 95014';
 const cityZipCodeRegex = /^[^,\\]+[,\\\s]+(.+?)\s*(\d{5})?$/;
@@ -116,7 +116,7 @@ saveCityZipCode(city, zipCode);
 ### Խուսափիր մտավոր կապ ստեղծելուց (Avoid Mental Mapping)
 Բացահայտը ծածկվածից լավ է
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 const locations = ['Austin', 'New York', 'San Francisco'];
 locations.forEach((l) => {
@@ -130,7 +130,7 @@ locations.forEach((l) => {
 });
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 const locations = ['Austin', 'New York', 'San Francisco'];
 locations.forEach((location) => {
@@ -147,7 +147,7 @@ locations.forEach((location) => {
 ### Մի օգտագործիր ոչ անրաժեշտ բովանդակություն
 Եթե քո կլասը/օբյեկտը քեզ ասում է որևէ բան, մի կրկնիր այն փոփոխականների անուններում
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 const Car = {
   carMake: 'Honda',
@@ -160,7 +160,7 @@ function paintCar(car) {
 }
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 const Car = {
   make: 'Honda',
@@ -180,7 +180,7 @@ use them, your function will only provide default values for `undefined`
 arguments. Other "falsy" values such as `''`, `""`, `false`, `null`, `0`, and
 `NaN`, will not be replaced by a default value.
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 function createMicrobrewery(name) {
   const breweryName = name || 'Hipster Brew Co.';
@@ -189,7 +189,7 @@ function createMicrobrewery(name) {
 
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 function createMicrobrewery(name = 'Hipster Brew Co.') {
   // ...
@@ -227,14 +227,14 @@ cloned.
 3. Linters can warn you about unused properties, which would be impossible
 without destructuring.
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 function createMenu(title, body, buttonText, cancellable) {
   // ...
 }
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 function createMenu({ title, body, buttonText, cancellable }) {
   // ...
@@ -257,7 +257,7 @@ When you can isolate a function to just one action, they can be refactored
 easily and your code will read much cleaner. If you take nothing else away from
 this guide other than this, you'll be ahead of many developers.
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 function emailClients(clients) {
   clients.forEach((client) => {
@@ -269,7 +269,7 @@ function emailClients(clients) {
 }
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 function emailActiveClients(clients) {
   clients
@@ -286,7 +286,7 @@ function isActiveClient(client) {
 
 ### Function names should say what they do
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 function addToDate(date, month) {
   // ...
@@ -298,7 +298,7 @@ const date = new Date();
 addToDate(date, 1);
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 function addMonthToDate(month, date) {
   // ...
@@ -314,7 +314,7 @@ When you have more than one level of abstraction your function is usually
 doing too much. Splitting up functions leads to reusability and easier
 testing.
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 function parseBetterJSAlternative(code) {
   const REGEXES = [
@@ -340,7 +340,7 @@ function parseBetterJSAlternative(code) {
 }
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 function parseBetterJSAlternative(code) {
   const tokens = tokenize(code);
@@ -399,7 +399,7 @@ worse than duplicate code, so be careful! Having said this, if you can make
 a good abstraction, do it! Don't repeat yourself, otherwise you'll find yourself
 updating multiple places anytime you want to change one thing.
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 function showDeveloperList(developers) {
   developers.forEach((developer) => {
@@ -432,7 +432,7 @@ function showManagerList(managers) {
 }
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 function showEmployeeList(employees) {
   employees.forEach((employee) => {
@@ -461,7 +461,7 @@ function showEmployeeList(employees) {
 
 ### Set default objects with Object.assign
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 const menuConfig = {
   title: null,
@@ -480,7 +480,7 @@ function createMenu(config) {
 createMenu(menuConfig);
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 const menuConfig = {
   title: 'Order',
@@ -509,7 +509,7 @@ createMenu(menuConfig);
 ### Don't use flags as function parameters
 Flags tell your user that this function does more than one thing. Functions should do one thing. Split out your functions if they are following different code paths based on a boolean.
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 function createFile(name, temp) {
   if (temp) {
@@ -520,7 +520,7 @@ function createFile(name, temp) {
 }
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 function createFile(name) {
   fs.create(name);
@@ -548,7 +548,7 @@ without any structure, using mutable data types that can be written to by anythi
 and not centralizing where your side effects occur. If you can do this, you will
 be happier than the vast majority of other programmers.
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 // Global variable referenced by following function.
 // If we had another function that used this name, now it'd be an array and it could break it.
@@ -563,7 +563,7 @@ splitIntoFirstAndLastName();
 console.log(name); // ['Ryan', 'McDermott'];
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 function splitIntoFirstAndLastName(name) {
   return name.split(' ');
@@ -610,14 +610,14 @@ this isn't a big issue in practice because there are
 this kind of programming approach to be fast and not as memory intensive as
 it would be for you to manually clone objects and arrays.
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 const addItemToCart = (cart, item) => {
   cart.push({ item, date: Date.now() });
 };
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 const addItemToCart = (cart, item) => {
   return [...cart, { item, date: Date.now() }];
@@ -637,7 +637,7 @@ to do the same thing. What if that other library was just using `diff` to find
 the difference between the first and last elements of an array? This is why it
 would be much better to just use ES2015/ES6 classes and simply extend the `Array` global.
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 Array.prototype.diff = function diff(comparisonArray) {
   const hash = new Set(comparisonArray);
@@ -645,7 +645,7 @@ Array.prototype.diff = function diff(comparisonArray) {
 };
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 class SuperArray extends Array {
   diff(comparisonArray) {
@@ -661,7 +661,7 @@ JavaScript isn't a functional language in the way that Haskell is, but it has
 a functional flavor to it. Functional languages can be cleaner and easier to test.
 Favor this style of programming when you can.
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 const programmerOutput = [
   {
@@ -686,7 +686,7 @@ for (let i = 0; i < programmerOutput.length; i++) {
 }
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 const programmerOutput = [
   {
@@ -712,14 +712,14 @@ const totalOutput = programmerOutput
 
 ### Encapsulate conditionals
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 if (fsm.state === 'fetching' && isEmpty(listNode)) {
   // ...
 }
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 function shouldShowSpinner(fsm, listNode) {
   return fsm.state === 'fetching' && isEmpty(listNode);
@@ -733,7 +733,7 @@ if (shouldShowSpinner(fsmInstance, listNodeInstance)) {
 
 ### Avoid negative conditionals
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 function isDOMNodeNotPresent(node) {
   // ...
@@ -744,7 +744,7 @@ if (!isDOMNodeNotPresent(node)) {
 }
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 function isDOMNodePresent(node) {
   // ...
@@ -766,7 +766,7 @@ one thing. When you have classes and functions that have `if` statements, you
 are telling your user that your function does more than one thing. Remember,
 just do one thing.
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 class Airplane {
   // ...
@@ -783,7 +783,7 @@ class Airplane {
 }
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 class Airplane {
   // ...
@@ -818,7 +818,7 @@ Sometimes you are bitten by this freedom and it becomes tempting to do
 type-checking in your functions. There are many ways to avoid having to do this.
 The first thing to consider is consistent APIs.
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 function travelToTexas(vehicle) {
   if (vehicle instanceof Bicycle) {
@@ -829,7 +829,7 @@ function travelToTexas(vehicle) {
 }
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 function travelToTexas(vehicle) {
   vehicle.move(this.currentLocation, new Location('texas'));
@@ -848,7 +848,7 @@ doesn't make up for the lost readability. Keep your JavaScript clean, write
 good tests, and have good code reviews. Otherwise, do all of that but with
 TypeScript (which, like I said, is a great alternative!).
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 function combine(val1, val2) {
   if (typeof val1 === 'number' && typeof val2 === 'number' ||
@@ -860,7 +860,7 @@ function combine(val1, val2) {
 }
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 function combine(val1, val2) {
   return val1 + val2;
@@ -875,7 +875,7 @@ resources](https://github.com/petkaantonov/bluebird/wiki/Optimization-killers)
 for seeing where optimization is lacking. Target those in the meantime, until
 they are fixed if they can be.
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 
 // On old browsers, each iteration with uncached `list.length` would be costly
@@ -885,7 +885,7 @@ for (let i = 0, len = list.length; i < len; i++) {
 }
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 for (let i = 0; i < list.length; i++) {
   // ...
@@ -898,7 +898,7 @@ Dead code is just as bad as duplicate code. There's no reason to keep it in
 your codebase. If it's not being called, get rid of it! It will still be safe
 in your version history if you still need it.
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 function oldRequestModule(url) {
   // ...
@@ -913,7 +913,7 @@ inventoryTracker('apples', req, 'www.inventory-awesome.io');
 
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 function newRequestModule(url) {
   // ...
@@ -939,7 +939,7 @@ to look up and change every accessor in your codebase.
 server.
 
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 function makeBankAccount() {
   // ...
@@ -954,7 +954,7 @@ const account = makeBankAccount();
 account.balance = 100;
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 function makeBankAccount() {
   // this one is private
@@ -987,7 +987,7 @@ account.setBalance(100);
 ### Make objects have private members
 This can be accomplished through closures (for ES5 and below).
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 
 const Employee = function(name) {
@@ -1004,7 +1004,7 @@ delete employee.name;
 console.log(`Employee name: ${employee.getName()}`); // Employee name: undefined
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 function makeEmployee(name) {
   return {
@@ -1029,7 +1029,7 @@ definitions for classical ES5 classes. If you need inheritance (and be aware
 that you might not), then prefer ES2015/ES6 classes. However, prefer small functions over
 classes until you find yourself needing larger and more complex objects.
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 const Animal = function(age) {
   if (!(this instanceof Animal)) {
@@ -1068,7 +1068,7 @@ Human.prototype.constructor = Human;
 Human.prototype.speak = function speak() {};
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 class Animal {
   constructor(age) {
@@ -1106,7 +1106,7 @@ For that reason, I say, use method chaining and take a look at how clean your co
 will be. In your class functions, simply return `this` at the end of every function,
 and you can chain further class methods onto it.
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 class Car {
   constructor(make, model, color) {
@@ -1137,7 +1137,7 @@ car.setColor('pink');
 car.save();
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 class Car {
   constructor(make, model, color) {
@@ -1195,7 +1195,7 @@ relationship (Human->Animal vs. User->UserDetails).
 3. You want to make global changes to derived classes by changing a base class.
 (Change the caloric expenditure of all animals when they move).
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 class Employee {
   constructor(name, email) {
@@ -1218,7 +1218,7 @@ class EmployeeTaxData extends Employee {
 }
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 class EmployeeTaxData {
   constructor(ssn, salary) {
@@ -1254,7 +1254,7 @@ It's important because if too much functionality is in one class and you modify
 a piece of it, it can be difficult to understand how that will affect other
 dependent modules in your codebase.
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 class UserSettings {
   constructor(user) {
@@ -1273,7 +1273,7 @@ class UserSettings {
 }
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 class UserAuth {
   constructor(user) {
@@ -1307,7 +1307,7 @@ etc.) should be open for extension, but closed for modification." What does that
 mean though? This principle basically states that you should allow users to
 add new functionalities without changing existing code.
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 class AjaxAdapter extends Adapter {
   constructor() {
@@ -1350,7 +1350,7 @@ function makeHttpCall(url) {
 }
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 class AjaxAdapter extends Adapter {
   constructor() {
@@ -1402,7 +1402,7 @@ classic Square-Rectangle example. Mathematically, a square is a rectangle, but
 if you model it using the "is-a" relationship via inheritance, you quickly
 get into trouble.
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 class Rectangle {
   constructor() {
@@ -1456,7 +1456,7 @@ const rectangles = [new Rectangle(), new Rectangle(), new Square()];
 renderLargeRectangles(rectangles);
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 class Shape {
   setColor(color) {
@@ -1518,7 +1518,7 @@ huge amounts of options is beneficial, because most of the time they won't need
 all of the settings. Making them optional helps prevent having a
 "fat interface".
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 class DOMTraverser {
   constructor(settings) {
@@ -1544,7 +1544,7 @@ const $ = new DOMTraverser({
 
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 class DOMTraverser {
   constructor(settings) {
@@ -1599,7 +1599,7 @@ and properties that an object/class exposes to another object/class. In the
 example below, the implicit contract is that any Request module for an
 `InventoryTracker` will have a `requestItems` method.
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 class InventoryRequester {
   constructor() {
@@ -1631,7 +1631,7 @@ const inventoryTracker = new InventoryTracker(['apples', 'bananas']);
 inventoryTracker.requestItems();
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 class InventoryTracker {
   constructor(items, requester) {
@@ -1691,7 +1691,7 @@ or refactoring an existing one.
 
 ### Single concept per test
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 import assert from 'assert';
 
@@ -1714,7 +1714,7 @@ describe('MakeMomentJSGreatAgain', () => {
 });
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 import assert from 'assert';
 
@@ -1745,7 +1745,7 @@ describe('MakeMomentJSGreatAgain', () => {
 Callbacks aren't clean, and they cause excessive amounts of nesting. With ES2015/ES6,
 Promises are a built-in global type. Use them!
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 import { get } from 'request';
 import { writeFile } from 'fs';
@@ -1766,7 +1766,7 @@ get('https://en.wikipedia.org/wiki/Robert_Cecil_Martin', (requestErr, response) 
 
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 import { get } from 'request';
 import { writeFile } from 'fs';
@@ -1792,7 +1792,7 @@ in an `async` keyword, and then you can write your logic imperatively without
 a `then` chain of functions. Use this if you can take advantage of ES2017/ES8 features
 today!
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 import { get } from 'request-promise';
 import { writeFile } from 'fs-promise';
@@ -1810,7 +1810,7 @@ get('https://en.wikipedia.org/wiki/Robert_Cecil_Martin')
 
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 import { get } from 'request-promise';
 import { writeFile } from 'fs-promise';
@@ -1842,7 +1842,7 @@ to the console. If you wrap any bit of code in a `try/catch` it means you
 think an error may occur there and therefore you should have a plan,
 or create a code path, for when it occurs.
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 try {
   functionThatMightThrow();
@@ -1851,7 +1851,7 @@ try {
 }
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 try {
   functionThatMightThrow();
@@ -1870,7 +1870,7 @@ try {
 For the same reason you shouldn't ignore caught errors
 from `try/catch`.
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 getdata()
   .then((data) => {
@@ -1881,7 +1881,7 @@ getdata()
   });
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 getdata()
   .then((data) => {
@@ -1916,7 +1916,7 @@ JavaScript is untyped, so capitalization tells you a lot about your variables,
 functions, etc. These rules are subjective, so your team can choose whatever
 they want. The point is, no matter what you all choose, just be consistent.
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 const DAYS_IN_WEEK = 7;
 const daysInMonth = 30;
@@ -1931,7 +1931,7 @@ class animal {}
 class Alpaca {}
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 const DAYS_IN_WEEK = 7;
 const DAYS_IN_MONTH = 30;
@@ -1953,7 +1953,7 @@ If a function calls another, keep those functions vertically close in the source
 file. Ideally, keep the caller right above the callee. We tend to read code from
 top-to-bottom, like a newspaper. Because of this, make your code read that way.
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 class PerformanceReview {
   constructor(employee) {
@@ -1992,7 +1992,7 @@ const review = new PerformanceReview(employee);
 review.perfReview();
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 class PerformanceReview {
   constructor(employee) {
@@ -2037,7 +2037,7 @@ review.perfReview();
 ### Only comment things that have business logic complexity.
 Comments are an apology, not a requirement. Good code *mostly* documents itself.
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 function hashIt(data) {
   // The hash
@@ -2058,7 +2058,7 @@ function hashIt(data) {
 }
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 
 function hashIt(data) {
@@ -2080,7 +2080,7 @@ function hashIt(data) {
 ### Don't leave commented out code in your codebase
 Version control exists for a reason. Leave old code in your history.
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 doStuff();
 // doOtherStuff();
@@ -2088,7 +2088,7 @@ doStuff();
 // doSoMuchStuff();
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 doStuff();
 ```
@@ -2098,7 +2098,7 @@ doStuff();
 Remember, use version control! There's no need for dead code, commented code,
 and especially journal comments. Use `git log` to get history!
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 /**
  * 2016-12-20: Removed monads, didn't understand them (RM)
@@ -2111,7 +2111,7 @@ function combine(a, b) {
 }
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 function combine(a, b) {
   return a + b;
@@ -2123,7 +2123,7 @@ function combine(a, b) {
 They usually just add noise. Let the functions and variable names along with the
 proper indentation and formatting give the visual structure to your code.
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 ////////////////////////////////////////////////////////////////////////////////
 // Scope Model Instantiation
@@ -2141,7 +2141,7 @@ const actions = function() {
 };
 ```
 
-**Լավ՝ **
+**Լավ՝**
 ```javascript
 $scope.model = {
   menu: 'foo',
