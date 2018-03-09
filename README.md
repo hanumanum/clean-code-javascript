@@ -1,20 +1,20 @@
 # clean-code-javascript
 
-## Table of Contents
-  1. [Introduction](#introduction)
-  2. [Variables](#variables)
-  3. [Functions](#functions)
-  4. [Objects and Data Structures](#objects-and-data-structures)
-  5. [Classes](#classes)
+## Բովանդակություն
+  1. [Ներածություն](#Ներածություն)
+  2. [Փոփոխականներ](#variables)
+  3. [Ֆունկցիաներ](#functions)
+  4. [Օբյեկտներ և տվյալների ստրուկտուրաներ](#objects-and-data-structures)
+  5. [Կասներ](#classes)
   6. [SOLID](#solid)
-  7. [Testing](#testing)
+  7. [Տեստավորում](#testing)
   8. [Concurrency](#concurrency)
-  9. [Error Handling](#error-handling)
-  10. [Formatting](#formatting)
-  11. [Comments](#comments)
-  12. [Translation](#translation)
+  9. [Սխալների մշակում](#error-handling)
+  10. [Ֆորմատավորում](#formatting)
+  11. [Մեկնաբանություններ](#comments)
+  12. [Թարգմանություններ](#translation)
 
-## Introduction
+## Ներածություն
 ![Humorous image of software quality estimation as a count of how many expletives
 you shout when reading code](http://www.osnews.com/images/comics/wtfm.jpg)
 
