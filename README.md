@@ -57,7 +57,7 @@ const currentDate = moment().format('YYYY/MM/DD');
 
 ### Օգտագործիր նույն բառարանը նույն փոփոխականների տեսակի համար
 
-**Վատ՝ **
+**Վատ՝**
 ```javascript
 getUserInfo();
 getClientData();
