@@ -82,14 +82,14 @@ getUser();
 
 **Վատ՝**
 ```javascript
-// What the heck is 86400000 for?
+// Ինչ թիվ է 86400000֊ը?
 setTimeout(blastOff, 86400000);
 
 ```
 
 **Լավ՝**
 ```javascript
-// Declare them as capitalized named constants.
+// Հայտարարիր դրանք որպես հաստատուններ
 const MILLISECONDS_IN_A_DAY = 86400000;
 
 setTimeout(blastOff, MILLISECONDS_IN_A_DAY);
@@ -115,7 +115,7 @@ saveCityZipCode(city, zipCode);
 **[⬆ վեր](#Բովանդակություն)**
 
 ### Խուսափիր մտավոր կապ ստեղծելուց (Avoid Mental Mapping)
-Բացահայտը ավելի է քան թաքցվածը։
+Բացահայտը ավելի է քան թաքնվածը։
 
 **Վատ՝**
 ```javascript
@@ -145,7 +145,7 @@ locations.forEach((location) => {
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Մի օգտագործիր ոչ անրաժեշտ բովանդակություն
+### Խուսափիր ավելորդ բովանդակությունից
 Եթե քո կլասը/օբյեկտը քեզ որևէ բան է ասում, մի կրկնիր նույնը փոփոխականների անուններում։
 
 **Վատ՝**
@@ -175,11 +175,11 @@ function paintCar(car) {
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Օգտագործիր արգումենտների սկբնարժեքավորում, խուսափիր պայմանների միջոցով դրանք դնելուց
+### Օգտագործիր արգումենտների սկբնարժեքավորում, խուսափիր պայմանների միջոցով սկզբնական արժեքներ դնելուց
 Սկզբնարժեքավորված արգումենտները հաճախ ավելի հասկանալի են քան մյուս տարբերակները կարճ արժեքավորումը։ Նաև 
-Իմացիր, որ եթե կարճ արժեքավորում օգտագործես, ապա քո ֆունկցիան կտրամադրի լռությամբ արժեքներ միայն `undefined` արժեքի դեպքում։
-Այլ "կեղծոտ" արժեքները, ինչպիսիք են `''`, `""`, `false`, `null`, `0`, and
-`NaN` , չի փոխարինվի լռությամբ արժեքներով։
+Իմացիր, որ եթե կարճ արժեքավորում օգտագործես, ապա քո ֆունկցիան կտրամադրի լռությամբ արժեքներ միայն արգումենտի `undefined` արժեքի դեպքում։
+Արգումենտների այլ "կեղծոտ" արժեքները, ինչպիսիք են `''`, `""`, `false`, `null`, `0`, և 
+`NaN` , չեն փոխարինվի լռությամբ արժեքներով։
 
 **Վատ՝**
 ```javascript
@@ -200,21 +200,19 @@ function createMicrobrewery(name = 'Hipster Brew Co.') {
 **[⬆ վեր](#Բովանդակություն)**
 
 ## **Ֆունկցիաներ**
-### Function arguments (2 or fewer ideally)
-Limiting the amount of function parameters is incredibly important because it
-makes testing your function easier. Having more than three leads to a
-combinatorial explosion where you have to test tons of different cases with
-each separate argument.
+### Ֆունկցիաների արգումենտներ (իդեալական տարբերակում 2 կամ պակաս)
+Ֆունկցիայի արգումենտների քանակը սահմանափակելը շատ կարևոր է, որովհետև դա հեշտացնում է 
+ֆունկցիայի աշխատանքի տեստավորումը։ Երեքից ավել արգումենտներ ունենալը բերում է այն  տարբերակների բազմացմանը
+, որոնք պետք է ստուգել յուրաքանչյուր արգումենտի հետ։
 
-One or two arguments is the ideal case, and three should be avoided if possible.
-Anything more than that should be consolidated. Usually, if you have
-more than two arguments then your function is trying to do too much. In cases
-where it's not, most of the time a higher-level object will suffice as an
-argument.
+Մեկ կամ երկու արգումենտ ունենալը իդեալական է իսկ երեք արգումենտից հնարավորության դեպքում պետք է խուսափել։
+Դրանցից ավելը պետք է խմբավորել։ Հաճախակի, եթե ունես երկու արգումենտից ավել, դա նշանակում է, 
+որ ֆունկցիադ հավանաբար ավելի շատ բան է անում, քան անհրաժեշտ է։ Եթե ոչ, ապա օբյեկտը որպես արգումենտ փոխանցելը 
+ավելի ճիշտ տարբերակ է։
 
-Since JavaScript allows you to make objects on the fly, without a lot of class
-boilerplate, you can use an object if you are finding yourself needing a
-lot of arguments.
+Քանի որ, JavaScript֊ը թույլատրում է ընթացքից օբյեկտներ ստեղծել (առանց նախապես class-ով նախագծելու), կարող ես 
+օգտագործել օբյեկտ եթե ունես շատ արգումենտենրի կարիք։
+
 
 To make it obvious what properties the function expects, you can use the ES2015/ES6
 destructuring syntax. This has a few advantages:
