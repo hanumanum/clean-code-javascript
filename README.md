@@ -500,8 +500,8 @@ createMenu(menuConfig);
 **[⬆ վեր](#Բովանդակություն)**
 
 
-### Don't use flags as function parameters
-Flags tell your user that this function does more than one thing. Functions should do one thing. Split out your functions if they are following different code paths based on a boolean.
+### Խուսափեք որպես ֆունկցիայի արգումենտ օգտագործել տրամաբանական փոփոխականներ
+Տրամաբանական փոփոխականը որպես արգումենտ, օգտագործողին հուշում է, որ ձեր ֆունկցիան մեկից ավելի բաներ է անում։ Բայց լավ ֆունկցիան պետք է կատարի միայն մեկ բան։ Նման ֆունկցիաները կարող եք բաժանել երկու մասի։
 
 **Վատ՝**
 ```javascript
@@ -526,21 +526,12 @@ function createTempFile(name) {
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Avoid Side Effects (part 1)
-A function produces a side effect if it does anything other than take a value in
-and return another value or values. A side effect could be writing to a file,
-modifying some global variable, or accidentally wiring all your money to a
-stranger.
+### Խուսափեք կողմնակի ազդեցությունից (մաս 1)
+Եթե ֆունկցիան բացի արգումենտ ստանալը և ինչ֊որ բան վերադարձնելը, անում է նաև այլ գործողություններ, ապար դա համարվում է կողմնակի ազդեցություն։ Կողմնակի ազդեցության օրինակներ են, ֆայլի մեջ գրելը, ինչ֊որ գլոբալ փոփոխական փոխելը, կամ պատահաբար ձեր հաշվի գումարը այլ մարդու փոխանցելը։
 
-Now, you do need to have side effects in a program on occasion. Like the previous
-example, you might need to write to a file. What you want to do is to
-centralize where you are doing this. Don't have several functions and classes
-that write to a particular file. Have one service that does it. One and only one.
+Հաճախ կարիք է լինում օգտագործել կողմնակի ազդեցություններ, ինչպիսիք են վերոշարադրյալները, քանի որ երբեմն պետք է գրել ֆայլի մեջ։ Նման դեպքերում դուք պետք է առանձնացնեք և կենտրոնացնեք ծրագրի այն մասերը որոնք ունեն կողմնակի ազդեցություն ու մի տեղից կատարել ֆայլիերի մանիպուլիացիան։ Մի ստեղծեք մի քանի ֆունկցիա միևնույն ֆայլի վրա գրելու համար։ Գրեք մեկ և միայն մեկ service (ծառայություն) որն անում է այդ գորոծղությունը։
 
-The main point is to avoid common pitfalls like sharing state between objects
-without any structure, using mutable data types that can be written to by anything,
-and not centralizing where your side effects occur. If you can do this, you will
-be happier than the vast majority of other programmers.
+Հիմնական իմաստն այն է, որ չստեղծեք ընդհանուր օգտագործման օբյեկտներ առանց դրա վրա կառուցելու ձևափոխությունների կենտրոնացված կլաս կամ օբյեկտ։ Քանի որ նման դեպքում, ծրագրի տարբեր մասերում կարող է ձևափոխվել ձեր օբյեկտը և դուք ստանաք անկանխատեսելի արդյունքներ։ Եթե կարողանաք խուսափել այս տարածված խնդիրց, ապա շատ ավելի երջանիկ կլինեք, քան ծրագրավորողների մեծ մասը։
 
 **Վատ՝**
 ```javascript
