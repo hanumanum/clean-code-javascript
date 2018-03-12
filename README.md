@@ -211,20 +211,18 @@ function createMicrobrewery(name = 'Hipster Brew Co.') {
 ավելի ճիշտ տարբերակ է։
 
 Քանի որ, JavaScript֊ը թույլատրում է ընթացքից օբյեկտներ ստեղծել (առանց նախապես class-ով նախագծելու), կարող ես 
-օգտագործել օբյեկտ եթե ունես շատ արգումենտենրի կարիք։
+օգտագործել օբյեկտ եթե ունես շատ արգումենտների կարիք։
+
+Ֆունկցիայի պահանջած հատկանիշները ակնհայտ սարքելու համար, կարող ես օգտագործել ES2015/ES6֊ից
+դեստրուկտուրիզացիայի սինտաքսը (destructuring syntax) , այն ունի որոշակի առավելություններ՝
+
+1. Երբ մեկը նայում է ֆունկցիայի սիգնատուրային , միանգամից ակնհայտ է դառնում թե ինչ արգումենտներ են օգտագործվում
+2. Դեստրուկտուրիզացիան կլոնավորում է ֆունկցիային փոխանցված արգումենտի պրիմիտիվ արժեքները։ Սա օգնում է խուսափել կողմնակի էֆեկտներից։
+ՀԻՇԻՐ։ Դեստրուկտուրացված արժեքների օբյեկտները և զանգվածները չէն կլոնավորվում։
+
+3. Լինթերները կարող են նախազգուշացնել չօգտագործված հատկանիշների մասին, ինչը անհնար կլինի առանց դեստրուկտուրիզացիայի։
 
 
-To make it obvious what properties the function expects, you can use the ES2015/ES6
-destructuring syntax. This has a few advantages:
-
-1. When someone looks at the function signature, it's immediately clear what
-properties are being used.
-2. Destructuring also clones the specified primitive values of the argument
-object passed into the function. This can help prevent side effects. Note:
-objects and arrays that are destructured from the argument object are NOT
-cloned.
-3. Linters can warn you about unused properties, which would be impossible
-without destructuring.
 
 **Վատ՝**
 ```javascript
@@ -249,12 +247,10 @@ createMenu({
 **[⬆ վեր](#Բովանդակություն)**
 
 
-### Functions should do one thing
-This is by far the most important rule in software engineering. When functions
-do more than one thing, they are harder to compose, test, and reason about.
-When you can isolate a function to just one action, they can be refactored
-easily and your code will read much cleaner. If you take nothing else away from
-this guide other than this, you'll be ahead of many developers.
+### Ֆունկցիան պիտի միայն մի բան անի
+Սա ԾԱ նախագծման մեջ կարևորագույն սկզբունքն է։ Մեկից ավելի բան անող ֆունկցիաները դժվար են նախագծվում, տեստավորվում և նաև դրանց մասին մտածելը նույնպես դժվարանում է։ Եթե կարող ես յուրաքանչյուր գործողություն իզոլացնել մեկ ֆունկցիայի ներսում, ապա այդ ֆունկցիաները հեշտ փոփոխելի (refactoring) են դառնում և քո ծրագիրը ավելի հեշտ է կարդացվում։ Եթե այս ուղեցույցից վերցնես միայն այս կանոնը, դու արդեն առաջ կանցնես բազմաթիվ ծրագրավորողներից։
+ 
+
 
 **Վատ՝**
 ```javascript
@@ -283,8 +279,7 @@ function isActiveClient(client) {
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Function names should say what they do
-
+### Ֆունկցիաների անունները պիտի ասեն, թե ինչ է ֆունկցիան անում
 **Վատ՝**
 ```javascript
 function addToDate(date, month) {
@@ -293,7 +288,7 @@ function addToDate(date, month) {
 
 const date = new Date();
 
-// It's hard to tell from the function name what is added
+// Դժվար է ֆունկցիայի անունից հասկանալ , թե ինչ է այն ավելացնում, օ՞ր, ամի՞ս, ի՜՞նչ ․․․
 addToDate(date, 1);
 ```
 
@@ -308,10 +303,10 @@ addMonthToDate(1, date);
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Functions should only be one level of abstraction
-When you have more than one level of abstraction your function is usually
-doing too much. Splitting up functions leads to reusability and easier
-testing.
+### Ֆունկցիան պիտի արտահայտի աբստրակցիայի միայն մեկ մակարդակ
+Աբստրակցիայի մեկ մակարդակից ավելին ունեցող ֆունկցիան, հավանաբար, անում է ավելին քան պետք է։
+Ֆունկցիան բաժանելը մի քանի ֆունկցիաների օգնում է ֆունկցիաների վերաօգտագործելիությանը և հեշտ տեստավորմանը։
+
 
 **Վատ՝**
 ```javascript
