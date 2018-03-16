@@ -441,7 +441,7 @@ function showEmployeeList(employees) {
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Set default objects with Object.assign
+### Լռությամբ օբյեկտները արժեքավորիր Object.assign֊ի միջոցով
 
 **Վատ՝**
 ```javascript
@@ -466,7 +466,7 @@ createMenu(menuConfig);
 ```javascript
 const menuConfig = {
   title: 'Order',
-  // User did not include 'body' key
+  // 'body' բանալին չի արժեքավորվել
   buttonText: 'Send',
   cancellable: true
 };
@@ -479,7 +479,7 @@ function createMenu(config) {
     cancellable: true
   }, config);
 
-  // config now equals: {title: "Order", body: "Bar", buttonText: "Send", cancellable: true}
+  // config֊ը հիմա հավասաար է: {title: "Order", body: "Bar", buttonText: "Send", cancellable: true}
   // ...
 }
 
@@ -488,8 +488,9 @@ createMenu(menuConfig);
 **[⬆ վեր](#Բովանդակություն)**
 
 
-### Don't use flags as function parameters
-Flags tell your user that this function does more than one thing. Functions should do one thing. Split out your functions if they are following different code paths based on a boolean.
+### Մի օգտագործիր դրոշակները, որպես ֆունկցիայի արգումենտ
+Դրոշակները ասում են, որ քո ֆունկցիան անում է մեկ գործից ավելին։ Ֆունկցիան պիտի անի միայն մեկ բան։ Բաժանիր ֆունկցիան, եթե այն աշխատում է տարբեր ճանապարհներով, կախված լինելով բուլյան արժեքներից։
+
 
 **Վատ՝**
 ```javascript
@@ -514,16 +515,13 @@ function createTempFile(name) {
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Avoid Side Effects (part 1)
-A function produces a side effect if it does anything other than take a value in
-and return another value or values. A side effect could be writing to a file,
-modifying some global variable, or accidentally wiring all your money to a
-stranger.
+### Խուսափիր կողմնակի էֆեկտներից (մաս 1)
+Եթե ֆունկցիան բացի արժեք վերցնելուց և վերադարձնելուց այլ բան է անում, ապա ասում են, որ այն ունի կողմնակի էֆետներ։ Կողմնակի էֆեկտները կարող են լինել՝
+* որևէ գլոբալ փոփոխականի արժեքը փոխելը 
+* ֆայլի մեջ տեղեկություներ գրելը
+* պատահականորեն ձեր ամբողջ փողը անծանոթ մեկին ուղարկելը ։)
 
-Now, you do need to have side effects in a program on occasion. Like the previous
-example, you might need to write to a file. What you want to do is to
-centralize where you are doing this. Don't have several functions and classes
-that write to a particular file. Have one service that does it. One and only one.
+Լավ, ենթադրենք ինչ որ առիթ ունես կողմնակի էֆեկտներ ստեղծելու։ Ինչպես նախորդ օրինակում, պահանջ կա տեղեկությունը գրել ֆայլի մեջ։ Մի ունեցիր մի քանի ֆունկցիաներ և կլասներ, որոնք գրում են կոնկրետ ֆայլերում։ Ունեցիր մեկ սերվիս, որը անում է ամբողջ աշխատանքը։ Մեկը և միայն մեկը։
 
 The main point is to avoid common pitfalls like sharing state between objects
 without any structure, using mutable data types that can be written to by anything,
