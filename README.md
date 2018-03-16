@@ -5,7 +5,7 @@
   2. [Փոփոխականներ](#Փոփոխականներ)
   3. [Ֆունկցիաներ](#Ֆունկցիաներ)
   4. [Օբյեկտներ և տվյալների ստրուկտուրաներ](#Օբյեկտներ֊և֊տվյալների֊ստրուկտուրաներ)
-  5. [Կասներ](#classes)
+  5. [Կասներ](#Կլասներ)
   6. [SOLID](#solid)
   7. [Տեստավորում](#testing)
   8. [Concurrency](#concurrency)
@@ -1002,8 +1002,8 @@ console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 **[⬆ վեր](#Բովանդակություն)**
 
 
-## **Classes**
-### Նախընտրիր ES2015/ES6 կլասները ES5 ֆունկցիաներից
+## **Կլասներ**
+### Նախընտրիր ES2015/ES6 կլասները և ոչ ES5 ֆունկցիաները
 It's very difficult to get readable class inheritance, construction, and method
 definitions for classical ES5 classes. If you need inheritance (and be aware
 that you might not), then prefer ES2015/ES6 classes. However, prefer small functions over
@@ -1079,7 +1079,7 @@ class Human extends Mammal {
 **[⬆ վեր](#Բովանդակություն)**
 
 
-### Use method chaining
+### Օգտագործիր մեթոդների շղթայավորում
 This pattern is very useful in JavaScript and you see it in many libraries such
 as jQuery and Lodash. It allows your code to be expressive, and less verbose.
 For that reason, I say, use method chaining and take a look at how clean your code
@@ -1157,7 +1157,7 @@ const car = new Car('Ford','F-150','red')
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Prefer composition over inheritance
+### Նախընտրիր կոմպոզիցիան ժառանգությանը
 As stated famously in [*Design Patterns*](https://en.wikipedia.org/wiki/Design_Patterns) by the Gang of Four,
 you should prefer composition over inheritance where you can. There are lots of
 good reasons to use inheritance and lots of good reasons to use composition.
