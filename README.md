@@ -441,7 +441,7 @@ function showEmployeeList(employees) {
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Լռությամբ օբյեկտները արժեքավորիր Object.assign֊ի միջոցով
+### Օբյեկտները սկզբարժեքավորիր Object.assign֊ի միջոցով
 
 **Վատ՝**
 ```javascript
