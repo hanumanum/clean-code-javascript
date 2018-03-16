@@ -4,7 +4,7 @@
   1. [Ներածություն](#Ներածություն)
   2. [Փոփոխականներ](#Փոփոխականներ)
   3. [Ֆունկցիաներ](#Ֆունկցիաներ)
-  4. [Օբյեկտներ և տվյալների ստրուկտուրաներ](#objects-and-data-structures)
+  4. [Օբյեկտներ և տվյալների ստրուկտուրաներ](#Օբյեկտներ֊և֊տվյալների֊ստրուկտուրաներ)
   5. [Կասներ](#classes)
   6. [SOLID](#solid)
   7. [Տեստավորում](#testing)
@@ -175,7 +175,7 @@ function paintCar(car) {
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Օգտագործիր արգումենտների սկբնարժեքավորում, խուսափիր պայմանների միջոցով սկզբնական արժեքներ դնելուց
+### Օգտագործիր արգումենտների սկզբնարժեքավորում, խուսափիր պայմանների միջոցով սկզբնական արժեքներ դնելուց
 Սկզբնարժեքավորված արգումենտները հաճախ ավելի հասկանալի են քան մյուս տարբերակները կարճ արժեքավորումը։ Նաև 
 Իմացիր, որ եթե կարճ արժեքավորում օգտագործես, ապա քո ֆունկցիան կտրամադրի լռությամբ արժեքներ միայն արգումենտի `undefined` արժեքի դեպքում։
 Արգումենտների այլ "կեղծոտ" արժեքները, ինչպիսիք են `''`, `""`, `false`, `null`, `0`, և 
@@ -479,7 +479,7 @@ function createMenu(config) {
     cancellable: true
   }, config);
 
-  // config֊ը հիմա հավասաար է: {title: "Order", body: "Bar", buttonText: "Send", cancellable: true}
+  // config֊ը հիմա հավասաար է {title: "Order", body: "Bar", buttonText: "Send", cancellable: true}
   // ...
 }
 
@@ -557,7 +557,7 @@ console.log(newName); // ['Ryan', 'McDermott'];
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Avoid Side Effects (part 2)
+### Խուսափիր կողմնակի էֆեկտներից (մաս 2)
 In JavaScript, primitives are passed by value and objects/arrays are passed by
 reference. In the case of objects and arrays, if your function makes a change
 in a shopping cart array, for example, by adding an item to purchase,
@@ -606,7 +606,7 @@ const addItemToCart = (cart, item) => {
 
 **[⬆ վեր](#Բովանդակություն)**
 
-### Don't write to global functions
+### Մի գրիր գլոբալ ֆունկցիաներ
 Polluting globals is a bad practice in JavaScript because you could clash with another
 library and the user of your API would be none-the-wiser until they get an
 exception in production. Let's think about an example: what if you wanted to
@@ -636,7 +636,7 @@ class SuperArray extends Array {
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Favor functional programming over imperative programming
+### Նախընտրիր ֆունկցիոնալ ծրագրավորումը՝ ոչ իմպերատիվը
 JavaScript isn't a functional language in the way that Haskell is, but it has
 a functional flavor to it. Functional languages can be cleaner and easier to test.
 Favor this style of programming when you can.
@@ -690,7 +690,7 @@ const totalOutput = programmerOutput
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Encapsulate conditionals
+### Ինկապսուլացրու (Encapsulate) պայմանները
 
 **Վատ՝**
 ```javascript
@@ -711,7 +711,7 @@ if (shouldShowSpinner(fsmInstance, listNodeInstance)) {
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Avoid negative conditionals
+### Խուսափիր բացասական պայմաններից
 
 **Վատ՝**
 ```javascript
@@ -736,7 +736,7 @@ if (isDOMNodePresent(node)) {
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Avoid conditionals
+### Խուսափիր պայմաններից
 This seems like an impossible task. Upon first hearing this, most people say,
 "how am I supposed to do anything without an `if` statement?" The answer is that
 you can use polymorphism to achieve the same task in many cases. The second
@@ -792,7 +792,7 @@ class Cessna extends Airplane {
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Avoid type-checking (part 1)
+### Խուսափիր տիպերի ստուգումներից (մաս 1)
 JavaScript is untyped, which means your functions can take any type of argument.
 Sometimes you are bitten by this freedom and it becomes tempting to do
 type-checking in your functions. There are many ways to avoid having to do this.
@@ -817,7 +817,7 @@ function travelToTexas(vehicle) {
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Avoid type-checking (part 2)
+### Խուսափիր տիպերի ստուգումներից (մաս 2)
 If you are working with basic primitive values like strings and integers,
 and you can't use polymorphism but you still feel the need to type-check,
 you should consider using TypeScript. It is an excellent alternative to normal
@@ -848,7 +848,7 @@ function combine(val1, val2) {
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Don't over-optimize
+### Մի արա գերօպտիմիզացիա
 Modern browsers do a lot of optimization under-the-hood at runtime. A lot of
 times, if you are optimizing then you are just wasting your time. [There are good
 resources](https://github.com/petkaantonov/bluebird/wiki/Optimization-killers)
@@ -873,7 +873,7 @@ for (let i = 0; i < list.length; i++) {
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Remove dead code
+### Հեռացրու մեռած կոդը
 Dead code is just as bad as duplicate code. There's no reason to keep it in
 your codebase. If it's not being called, get rid of it! It will still be safe
 in your version history if you still need it.
@@ -904,8 +904,8 @@ inventoryTracker('apples', req, 'www.inventory-awesome.io');
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-## **Objects and Data Structures**
-### Use getters and setters
+## **Օբյեկտներ և տվյալների ստրուկտուրաներ**
+### Օգտագործիր getter֊ներ և setter-ներ
 Using getters and setters to access data on objects could be better than simply
 looking for a property on an object. "Why?" you might ask. Well, here's an
 unorganized list of reasons why:
@@ -964,7 +964,7 @@ account.setBalance(100);
 **[⬆ վեր](#Բովանդակություն)**
 
 
-### Make objects have private members
+### Օբյեկտներում ունեցիր private անդամներ
 This can be accomplished through closures (for ES5 and below).
 
 **Վատ՝**
@@ -1003,7 +1003,7 @@ console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 
 
 ## **Classes**
-### Prefer ES2015/ES6 classes over ES5 plain functions
+### Նախընտրիր ES2015/ES6 կլասները ES5 ֆունկցիաներից
 It's very difficult to get readable class inheritance, construction, and method
 definitions for classical ES5 classes. If you need inheritance (and be aware
 that you might not), then prefer ES2015/ES6 classes. However, prefer small functions over
