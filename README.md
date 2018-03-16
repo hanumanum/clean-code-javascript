@@ -371,28 +371,16 @@ function lexer(tokens) {
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Remove duplicate code
-Do your absolute best to avoid duplicate code. Duplicate code is bad because it
-means that there's more than one place to alter something if you need to change
-some logic.
+### Հեռացրու կրկնվող կոդը
+Արա առավելագույնը կրկնվող կոդից խուսափելու համար։ Կրկնվող կոդը վատ է, որովհետև անրհաժեշտության դեպքում, փոփոխությունները անհրաժեշտ կլինի անել մեկից ավել տեղերում։ 
 
-Imagine if you run a restaurant and you keep track of your inventory: all your
-tomatoes, onions, garlic, spices, etc. If you have multiple lists that
-you keep this on, then all have to be updated when you serve a dish with
-tomatoes in them. If you only have one list, there's only one place to update!
+Պատկերացրու դու ռեստորան ունես և պահում ես տվյալներ բոլոր մթերքների մասին, բոլոր պոմիդորների, սոխերի, սխտորների, համեմունքների և այլն ․․․ Եթե ունենաս մի քանի ցանկ, ապա 
+բոլոր այդ ցանկերը պիտի թարմանացվեն, երբ պոմիդորով որևէ ճաշատեսակ սարքես։ Միայն մեկ ցանկ ունենալու դեպքում միայն մի տեղ պիտի թարմացնես տվյալները։
 
-Oftentimes you have duplicate code because you have two or more slightly
-different things, that share a lot in common, but their differences force you
-to have two or more separate functions that do much of the same things. Removing
-duplicate code means creating an abstraction that can handle this set of
-different things with just one function/module/class.
+Հաճախակի կոդը կրկնապատկվում է, որովհետև ունես իրարից մի քիչ տարբերվող բաներ, որոնք հիմնականում նույնն են, բայց նաև տարբերություններ կան։ Տարբերությունենրը ստիպում են քեզ երկու կամ ավել առանձին ֆունկցիաներ սարքել այդ երկու բաների համար։ Կրկնվող կոդը հեռացնելը նշանակում է, որ պետք է ստեղծել աբստրակցիայի այնպիսի մակարդակ, որը կկարողանա աշխատել այդ բաների խմբի հետ միայն մեկ ֆունկցիայի (մոդուլի,կլասսի) միջոցով:
 
-Getting the abstraction right is critical, that's why you should follow the
-SOLID principles laid out in the *Classes* section. Bad abstractions can be
-worse than duplicate code, so be careful! Having said this, if you can make
-a good abstraction, do it! Don't repeat yourself, otherwise you'll find yourself
-updating multiple places anytime you want to change one thing.
-
+Ճիշտ աբստրակցիա նկարագրելը կրիտիկական է, այդ պատճառով պետք է  հետևես *Կլասներ* բաժնում նկարագրված SOLID սկզբունքներին։ Վատ աբստրակցիան ավելի վատ է, քան կրկնվող կոդը․ զգույշ եղիր։ Մի կրկնիր ինքդ քեզ, հակառակ դեպքում կհայտնվես այնպիսի վիճակում, որ մեկ փոփոխության համար մի քանի տեղ պիտի կոդը փոփոխես։ 
+ 
 **Վատ՝**
 ```javascript
 function showDeveloperList(developers) {
