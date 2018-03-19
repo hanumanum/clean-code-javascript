@@ -4,15 +4,15 @@
   1. [Ներածություն](#Ներածություն)
   2. [Փոփոխականներ](#Փոփոխականներ)
   3. [Ֆունկցիաներ](#Ֆունկցիաներ)
-  4. [Օբյեկտներ և տվյալների ստրուկտուրաներ](#օբյեկտներ-և-տվյալների-ստրուկտուրաներ)
-  5. [Կասներ](#Կլասներ)
+  4. [Օբյեկտներ և տվյալների ստրուկտուրաներ](#oբյեկտներ-և-տվյալների-ստրուկտուրաներ)
+  5. [Կասներ](#կլասներ)
   6. [SOLID](#solid)
-  7. [Տեստավորում](#Տեստավորում)
+  7. [Տեստավորում](#տեստավորում)
   8. [Concurrency](#concurrency)
-  9. [Սխալների մշակում](#Սխալների֊մշակում)
-  10. [Ֆորմատավորում](#formatting)
-  11. [Մեկնաբանություններ](#comments)
-  12. [Թարգմանություններ](#translation)
+  9. [Սխալների մշակում](#սխալների-մշակում)
+  10. [Ֆորմատավորում](#ֆորմատավորում)
+  11. [Մեկնաբանություններ](#մեկնաբանություններ)
+  12. [Թարգմանություններ](#թարգմանություններ)
 
 ## Ներածություն
 ![Humorous image of software quality estimation as a count of how many expletives
@@ -1669,7 +1669,7 @@ Test Driven Development (TDD), that is great, but the main point is to just
 make sure you are reaching your coverage goals before launching any feature,
 or refactoring an existing one.
 
-### Ամեն տեստին պարզ գաղափար
+### Ամեն տեստին միակ պարզ գաղափար
 
 **Վատ՝**
 ```javascript
@@ -1814,7 +1814,7 @@ identified when something in your program has gone wrong and it's letting
 you know by stopping function execution on the current stack, killing the
 process (in Node), and notifying you in the console with a stack trace.
 
-### Don't ignore caught errors
+### Մի անտեսիր բռնված սխալները
 Doing nothing with a caught error doesn't give you the ability to ever fix
 or react to said error. Logging the error to the console (`console.log`)
 isn't much better as often times it can get lost in a sea of things printed
@@ -1846,7 +1846,7 @@ try {
 }
 ```
 
-### Don't ignore rejected promises
+### Մի անտեսիր մերժված փրոմիսները
 For the same reason you shouldn't ignore caught errors
 from `try/catch`.
 
@@ -1881,7 +1881,7 @@ getdata()
 **[⬆ վեր](#Բովանդակություն)**
 
 
-## **Formatting**
+## **Ֆորմատավորում**
 Formatting is subjective. Like many rules herein, there is no hard and fast
 rule that you must follow. The main point is DO NOT ARGUE over formatting.
 There are [tons of tools](http://standardjs.com/rules.html) to automate this.
@@ -2013,7 +2013,7 @@ review.perfReview();
 
 **[⬆ վեր](#Բովանդակություն)**
 
-## **Comments**
+## **Մեկնաբանություններ**
 ### Only comment things that have business logic complexity.
 Comments are an apology, not a requirement. Good code *mostly* documents itself.
 
@@ -2134,7 +2134,7 @@ const actions = function() {
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-## Translation
+## Թարգմանություններ
 
 This is also available in other languages:
 
