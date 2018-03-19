@@ -7,9 +7,9 @@
   4. [Օբյեկտներ և տվյալների ստրուկտուրաներ](#Օբյեկտներ֊և֊տվյալների֊ստրուկտուրաներ)
   5. [Կասներ](#Կլասներ)
   6. [SOLID](#solid)
-  7. [Տեստավորում](#testing)
+  7. [Տեստավորում](#տեստավորում)
   8. [Concurrency](#concurrency)
-  9. [Սխալների մշակում](#error-handling)
+  9. [Սխալների մշակում](#Սխալների֊մշակում)
   10. [Ֆորմատավորում](#formatting)
   11. [Մեկնաբանություններ](#comments)
   12. [Թարգմանություններ](#translation)
@@ -1157,7 +1157,7 @@ const car = new Car('Ford','F-150','red')
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Նախընտրիր կոմպոզիցիան ժառանգությանը
+### Կոմպոզիցիան նախընտրելի է ժառանգությունից 
 As stated famously in [*Design Patterns*](https://en.wikipedia.org/wiki/Design_Patterns) by the Gang of Four,
 you should prefer composition over inheritance where you can. There are lots of
 good reasons to use inheritance and lots of good reasons to use composition.
@@ -1224,7 +1224,7 @@ class Employee {
 **[⬆ վեր](#Բովանդակություն)**
 
 ## **SOLID**
-### Single Responsibility Principle (SRP)
+### Single Responsibility Principle (Միակ պատասխանատվության սկզբունք) (SRP)
 As stated in Clean Code, "There should never be more than one reason for a class
 to change". It's tempting to jam-pack a class with a lot of functionality, like
 when you can only take one suitcase on your flight. The issue with this is
@@ -1281,7 +1281,7 @@ class UserSettings {
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Open/Closed Principle (OCP)
+### Բացության/փակության սկզբունք (Open/Closed Principle (OCP))
 As stated by Bertrand Meyer, "software entities (classes, modules, functions,
 etc.) should be open for extension, but closed for modification." What does that
 mean though? This principle basically states that you should allow users to
@@ -1368,7 +1368,7 @@ class HttpRequester {
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Liskov Substitution Principle (LSP)
+### Լիսկովի փոխարինման սկզբունքը (Liskov Substitution Principle (LSP))
 This is a scary term for a very simple concept. It's formally defined as "If S
 is a subtype of T, then objects of type T may be replaced with objects of type S
 (i.e., objects of type S may substitute objects of type T) without altering any
@@ -1483,7 +1483,7 @@ renderLargeShapes(shapes);
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Interface Segregation Principle (ISP)
+### Ինտերֆեյսի բաժանման սկզբունք (Interface Segregation Principle (ISP))
 JavaScript doesn't have interfaces so this principle doesn't apply as strictly
 as others. However, it's important and relevant even with JavaScript's lack of
 type system.
@@ -1558,7 +1558,7 @@ const $ = new DOMTraverser({
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Dependency Inversion Principle (DIP)
+### Կախվածությունների շրջման սկզբունք (Dependency Inversion Principle (DIP))
 This principle states two essential things:
 1. High-level modules should not depend on low-level modules. Both should
 depend on abstractions.
@@ -1653,7 +1653,7 @@ inventoryTracker.requestItems();
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-## **Testing**
+## **Տեստավորում**
 Testing is more important than shipping. If you have no tests or an
 inadequate amount, then every time you ship code you won't be sure that you
 didn't break anything. Deciding on what constitutes an adequate amount is up
@@ -1669,7 +1669,7 @@ Test Driven Development (TDD), that is great, but the main point is to just
 make sure you are reaching your coverage goals before launching any feature,
 or refactoring an existing one.
 
-### Single concept per test
+### Ամեն տեստին պարզ գաղափար
 
 **Վատ՝**
 ```javascript
@@ -1721,7 +1721,7 @@ describe('MakeMomentJSGreatAgain', () => {
 **[⬆ վեր](#Բովանդակություն)**
 
 ## **Concurrency**
-### Use Promises, not callbacks
+### Օգտագործիր փրոմիսներ(Promises), ոչ քալբեքներ(callback)
 Callbacks aren't clean, and they cause excessive amounts of nesting. With ES2015/ES6,
 Promises are a built-in global type. Use them!
 
@@ -1765,7 +1765,7 @@ get('https://en.wikipedia.org/wiki/Robert_Cecil_Martin')
 ```
 **[⬆ վեր](#Բովանդակություն)**
 
-### Async/Await are even cleaner than Promises
+### Async/Await փրոմիսներից ավելի հասկանալի է
 Promises are a very clean alternative to callbacks, but ES2017/ES8 brings async and await
 which offer an even cleaner solution. All you need is a function that is prefixed
 in an `async` keyword, and then you can write your logic imperatively without
@@ -1808,7 +1808,7 @@ async function getCleanCodeArticle() {
 **[⬆ վեր](#Բովանդակություն)**
 
 
-## **Error Handling**
+## **Սխալների մշակում**
 Thrown errors are a good thing! They mean the runtime has successfully
 identified when something in your program has gone wrong and it's letting
 you know by stopping function execution on the current stack, killing the
