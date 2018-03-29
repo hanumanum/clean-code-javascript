@@ -573,15 +573,7 @@ const addItemToCart = (cart, item) => {
 **[⬆ վեր](#Բովանդակություն)**
 
 ### Մի գրիր գլոբալ ֆունկցիաներ
-Polluting globals is a bad practice in JavaScript because you could clash with another
-library and the user of your API would be none-the-wiser until they get an
-exception in production. Let's think about an example: what if you wanted to
-extend JavaScript's native Array method to have a `diff` method that could
-show the difference between two arrays? You could write your new function
-to the `Array.prototype`, but it could clash with another library that tried
-to do the same thing. What if that other library was just using `diff` to find
-the difference between the first and last elements of an array? This is why it
-would be much better to just use ES2015/ES6 classes and simply extend the `Array` global.
+Գլոբալ փոփոխականները աղտոտելը վատ պրակտիկա է JavaScript֊ում, որովհետև դու կարող ես ունենալ բախում այլ գրադարանների հետ։ Եվ քո API֊ի օգտատերը ոչինչ չի իմանա, քանի դեռ իրական ծրագրում չի ստանա բացառություն (exeption in production): Արի մտածենք հետևյալ օրինակի վրա։ Ի՞նչ կլինի եթե դու ուզենաս ընդլայնել JavaScript-ի հարազատ(native) Array֊ը ստեղծելով `diff` մեթոդը, որը ցուցադրում է զանգվածների տարբերությունը։ Դու կարող ես գրել քո ֆունկցիան `Array.prototype`֊ի միջոցով, սակայն այն կարող է բախվել այլ գրադարանի նույնանուն ֆունկցիայի հետ, որը փորձում է անել նույն բանը։ Իսկ եթե մյուս գրադարանի `diff`֊ը որոնում է տարբերությունը զանգվածի առաջին և վերջին անդամների միջև։ Ահա թե ինչու է ավելի լավ ուղակի օգտագործել ES2015/ES6 կլասները և հեշտությամբ ընդլայնել `Array` օբյեկտը։
 
 **Վատ՝**
 ```javascript
@@ -603,9 +595,7 @@ class SuperArray extends Array {
 **[⬆ վեր](#Բովանդակություն)**
 
 ### Նախընտրիր ֆունկցիոնալ ծրագրավորումը՝ ոչ իմպերատիվը
-JavaScript isn't a functional language in the way that Haskell is, but it has
-a functional flavor to it. Functional languages can be cleaner and easier to test.
-Favor this style of programming when you can.
+JavaScript֊ը ֆունկցիոնալ ծրագրավորման լեզու չի այն իմաստով, որով Haskell֊ն է, սակայն այն ունի ֆունկցիոնալ հատկանիշներ։ Ֆունկցիոնալ լեզուները կարող են լինել ավելի մաքուր և հեշտ տեստավորվող։ Նախընտրիր այս ոճը, երբ դա հնարավոր է։
 
 **Վատ՝**
 ```javascript
