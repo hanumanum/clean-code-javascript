@@ -510,10 +510,7 @@ function createTempFile(name) {
 
 Լավ, ենթադրենք ինչ որ առիթ ունես կողմնակի էֆեկտներ ստեղծելու։ Ինչպես նախորդ օրինակում, պահանջ կա տեղեկությունը գրել ֆայլի մեջ։ Մի ունեցիր մի քանի ֆունկցիաներ և կլասներ, որոնք գրում են կոնկրետ ֆայլերում։ Ունեցիր մեկ սերվիս, որը անում է ամբողջ աշխատանքը։ Մեկը և միայն մեկը։
 
-The main point is to avoid common pitfalls like sharing state between objects
-without any structure, using mutable data types that can be written to by anything,
-and not centralizing where your side effects occur. If you can do this, you will
-be happier than the vast majority of other programmers.
+Հիմնական իմաստը դա վիճակը կիսող կամ փոփոխելի(mutable) տվյալների տիպերի հետ աշխատանքից խուսափելն է և կողմնակի էֆեկտների ստեղծումը չկենտոնականացնելը։ Եթե դու անես սա, կլինես ավելի երջանիկ քան ծրագրավորողների ճնշող մեծամասնությունը։  
 
 **Վատ՝**
 ```javascript
@@ -545,37 +542,19 @@ console.log(newName); // ['Ryan', 'McDermott'];
 **[⬆ վեր](#Բովանդակություն)**
 
 ### Խուսափիր կողմնակի էֆեկտներից (մաս 2)
-In JavaScript, primitives are passed by value and objects/arrays are passed by
-reference. In the case of objects and arrays, if your function makes a change
-in a shopping cart array, for example, by adding an item to purchase,
-then any other function that uses that `cart` array will be affected by this
-addition. That may be great, however it can be bad too. Let's imagine a bad
-situation:
+JavaScript լեզվում տարրական տիպի տվյալները ֆունկցիաներին փոխանցվում են իրենց արժեքով, իսկ օբյեկտները/զանգվածները հղումով (by refreance)։ Օբյեկտների/զանգվածների դեպքում, եթե քո ֆունկցիան կատարում է փոփոխություն օրինակ զամբյուղում, ավելացնելով ապրանք, ապա մյուս ֆունկցիան որը կօգտագործի այդ զանգվածը կստանա փոփոխված տարբերակը։ Սա կարող է լավ լինել, սակայն կարող է նաև վատ լինել։ Պատկերացնենք վատ իրավիճակը։ 
 
-The user clicks the "Purchase", button which calls a `purchase` function that
-spawns a network request and sends the `cart` array to the server. Because
-of a bad network connection, the `purchase` function has to keep retrying the
-request. Now, what if in the meantime the user accidentally clicks "Add to Cart"
-button on an item they don't actually want before the network request begins?
-If that happens and the network request begins, then that purchase function
-will send the accidentally added item because it has a reference to a shopping
-cart array that the `addItemToCart` function modified by adding an unwanted
-item.
+Օգտատերը սեղում է "Գնել" կոճակը, որը կանչում է `purchase` ֆունկցիան, որը առաջացնում է ցանցային հարցում և ուղարկում է `cart` զանգվածը սերվերին։ Ցանցային վատ կապի պատճառով `purchase` ֆունկցիան շարունակում է փորձել ուղարկել հարցումը։ Ի՞նչ կլինի եթե օգտատերը միևնույն ժամանակ պատահաբար սեղմի "Ավելացնել զամբյուղին" կոճակը և ավելացնի ապրանք, որը նա չէր ցանկանում։ Եթե դա պատահի և ցանցային հարցումը սկսվի, գնելու ֆունկցիան կուղարկի նաև սխալմամբ ավելացված ապրանքը, որովհետև այն ունի հղում `cart` զանգվածին որը արդեն փոփոխված է `addItemToCart` ֆունկցիայի աշխատանքի պատճառով։
 
-A great solution would be for the `addItemToCart` to always clone the `cart`,
-edit it, and return the clone. This ensures that no other functions that are
-holding onto a reference of the shopping cart will be affected by any changes.
+Լավագույն լուծումը կլինի այն, որ `addItemToCart` ֆունկցիան միշտ պատճենի `cart`֊ը, խմբագրի այն և վերադարձնի պատճենը։ Սա երաշխավորում է, որ ոչ մի այլ ֆունկցիա չի փոխի զամբյուղի արժեքը։ 
 
-Two caveats to mention to this approach:
-  1. There might be cases where you actually want to modify the input object,
-but when you adopt this programming practice you will find that those cases
-are pretty rare. Most things can be refactored to have no side effects!
+Երկու նախազգուշացում այս տեսանկյունի կապակցությամբ
 
-  2. Cloning big objects can be very expensive in terms of performance. Luckily,
-this isn't a big issue in practice because there are
-[great libraries](https://facebook.github.io/immutable-js/) that allow
-this kind of programming approach to be fast and not as memory intensive as
-it would be for you to manually clone objects and arrays.
+
+  1. Կարող են լինել իրավիճակներ, երբ իրոք պետք կլինի փոփոխել մտնող օբյեկտը, սակայն եթե դու ընդունես վերընշված պրակտիկան, ապա կտեսնես, որ նմանատիպ իրավիճակները շատ հազվադեպ են։ Շատ բաներ կարելի է վերափոխել (refactoring) հեռացնելով կողմնակի էֆեկտները։
+  
+  2. Մեծ օբյեկտների պատճենումը կարող է շատ ծախսատար լինել արագագործության տեսանկյունից։ Բարեբախտաբար գործանականում դա մեծ խնդիր չի, որովհետև կան [լավ գրադարաններ](https://facebook.github.io/immutable-js/) որոնք այս տիպի ծրագրավորումը դարձում են ավելի արագ և ոչ այդքան ծախսատար (հիշողության տեսանկյունից) , քան ձեռքով օբյետները և զանգվածները պատճենելու ժամանակ։ 
+  
 
 **Վատ՝**
 ```javascript
