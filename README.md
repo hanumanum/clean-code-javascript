@@ -693,14 +693,13 @@ if (isDOMNodePresent(node)) {
 **[⬆ վեր](#Բովանդակություն)**
 
 ### Խուսափիր պայմաններից
-This seems like an impossible task. Upon first hearing this, most people say,
-"how am I supposed to do anything without an `if` statement?" The answer is that
-you can use polymorphism to achieve the same task in many cases. The second
-question is usually, "well that's great but why would I want to do that?" The
-answer is a previous clean code concept we learned: a function should only do
-one thing. When you have classes and functions that have `if` statements, you
-are telling your user that your function does more than one thing. Remember,
-just do one thing.
+Սա կարծես անլուծելի մի բան լինի։ Առաջին անգամ սա լսելիս շատ մարդիկ ասում են․
+"Ինպե՞ս կարող եմ անել որևէ բան առանց `if`֊ի"։ Պատասխանը այն է, որ շատ դեպքերում  
+դու կարող ես օգտագործել բազմաձևությունը (պոլիմորֆիզմ) նույն խնդիրը լուծելու համար։
+Հաճախ տրվող երկրորդ հարցն է՝ "լավ, բայց ինչի համար է դա պետք անել"։ Պատասխանը այն 
+նախկինում սովորած մաքուր կոդի գաղափարներից մեկն է․ ֆունկցիան պիտի անի միայն մի բան։ 
+Երբ քո ֆունկցիաները և կլասները ունեն `if`֊եր, դու ասում ես քո օգտատերերին, որ քո 
+ֆունկցիան անում է մեկ բանից ավել։ Հիշիր ՝ ֆունկցիան պիտի անի միայն մեկ բան։
 
 **Վատ՝**
 ```javascript
@@ -749,10 +748,10 @@ class Cessna extends Airplane {
 **[⬆ վեր](#Բովանդակություն)**
 
 ### Խուսափիր տիպերի ստուգումներից (մաս 1)
-JavaScript is untyped, which means your functions can take any type of argument.
-Sometimes you are bitten by this freedom and it becomes tempting to do
-type-checking in your functions. There are many ways to avoid having to do this.
-The first thing to consider is consistent APIs.
+JavaScript֊ը տիպավորված չէ, ինչը նշանակում է, որ քո ֆունկցիաները կարող են ստանալ
+ցանկացած տիպի արգումենտ։ Հաճախ դու տուժում ես այս ազատությունից և ստիպված ես լինում
+ստուգել տիպերը ֆունկցիաների ներսում։ Կան շատ եղանակներ սրանից խուսափելու համար։
+Առաջինը դիտարկիր հետևողական API֊ները։
 
 **Վատ՝**
 ```javascript
@@ -774,15 +773,15 @@ function travelToTexas(vehicle) {
 **[⬆ վեր](#Բովանդակություն)**
 
 ### Խուսափիր տիպերի ստուգումներից (մաս 2)
-If you are working with basic primitive values like strings and integers,
-and you can't use polymorphism but you still feel the need to type-check,
-you should consider using TypeScript. It is an excellent alternative to normal
-JavaScript, as it provides you with static typing on top of standard JavaScript
-syntax. The problem with manually type-checking normal JavaScript is that
-doing it well requires so much extra verbiage that the faux "type-safety" you get
-doesn't make up for the lost readability. Keep your JavaScript clean, write
-good tests, and have good code reviews. Otherwise, do all of that but with
-TypeScript (which, like I said, is a great alternative!).
+Եթե աշխատում ես հիմնական տարրական արժեքների հետ (ինչպիսին են տողերը և ամբողջ թվերը),
+և չէս կարող բազմաձևություն (պոլիմորֆիզմ) կիրառել, սակայն ունես տիպերի ստուգման 
+անհրաժեշտություն, պիտի դիտարկես TypeScript֊ի կիրառությունը։ Այն նորմալ JavasSript-ի
+գերազանց այլընտրանք է, որովհետև առաջարկում է ստատիկ տիպավորում ի հավելումն ստանդարտ 
+JavaScript-ի  սիտնաքսին։ Նորմալ JavaScrpt-ում ձեռքով տիպերի ստուգման խնդիրը նրանում է, 
+որ այն լավ անելու համար պահանջվում է շեղում կոդի ընթեռնելիությունից։ Պահիր քո JavaScript-ը
+մաքուր, գրիր լավ տեստեր և ունեցիր լավ կոդ-վերանայումներ (code reviews): Հակառակ դեպքում արա 
+նույնը, սակայն TypeScript֊ի օգտագործմամբ, որը ինչպես վերը նշվեց գերազանց այլընտրանք է։
+
 
 **Վատ՝**
 ```javascript
@@ -805,11 +804,9 @@ function combine(val1, val2) {
 **[⬆ վեր](#Բովանդակություն)**
 
 ### Մի արա գերօպտիմիզացիա
-Modern browsers do a lot of optimization under-the-hood at runtime. A lot of
-times, if you are optimizing then you are just wasting your time. [There are good
-resources](https://github.com/petkaantonov/bluebird/wiki/Optimization-killers)
-for seeing where optimization is lacking. Target those in the meantime, until
-they are fixed if they can be.
+Ժամանակակից դիտարկիչները «տակից»(under-the-hood) կատարում են բազմապիսի օպտիմիզացիաներ։
+Հիմնականում, դու ժամանակ ես վատնում, երբ օպտիմիզացնում ես ծրագիրը։ [Կան լավ աղբյուրներ](https://github.com/petkaantonov/bluebird/wiki/Optimization-killers) 
+հասկանալու համար, թե երբ է օպտիմիզացիան բացակայում։ 
 
 **Վատ՝**
 ```javascript
