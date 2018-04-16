@@ -831,9 +831,10 @@ for (let i = 0; i < list.length; i++) {
 **[⬆ վեր](#Բովանդակություն)**
 
 ### Հեռացրու մեռած կոդը
-Dead code is just as bad as duplicate code. There's no reason to keep it in
-your codebase. If it's not being called, get rid of it! It will still be safe
-in your version history if you still need it.
+Մեռած կոդը նույնքան վատ է, որքան կրկնվող կոդը։ Ոչ մի պատճառ չկա այն քո ծրագրում
+պահելու համար։ Եթե այն չի աշխատելու, վերացրո՛ւ այն։ Այն կպահպանվի վարկածների
+պատմության մեջ, եթե հանակարծ ապագայում անհրաժեշտ լինի։
+
 
 **Վատ՝**
 ```javascript
@@ -863,17 +864,15 @@ inventoryTracker('apples', req, 'www.inventory-awesome.io');
 
 ## **Օբյեկտներ և տվյալների ստրուկտուրաներ**
 ### Օգտագործիր getter֊ներ և setter-ներ
-Using getters and setters to access data on objects could be better than simply
-looking for a property on an object. "Why?" you might ask. Well, here's an
-unorganized list of reasons why:
-
-* When you want to do more beyond getting an object property, you don't have
-to look up and change every accessor in your codebase.
-* Makes adding validation simple when doing a `set`.
-* Encapsulates the internal representation.
-* Easy to add logging and error handling when getting and setting.
-* You can lazy load your object's properties, let's say getting it from a
-server.
+Օբյեկնտերում տվյալներին հասնելու համար getter֊ներ և setter֊ներ օգտագործելը ավելի
+լավ է, քան օբյեկտի հատկանիշներին անմիջապես դիմելը։ Ինչու՞։ Ահա պատճառների մի
+մի չդասակարգված ցանկ՝
+* եթե դու ուզում ես անել ավելին քան օբյեկտի հատկանիշից արժեքը ուղղակի վերցնելն է, 
+քեզ պետք չի լինի փնտրել և փոփոխել այն ամեն ժառանգորդի մեջ։
+* Կարող ես հեշտությամբ անել վավերացում (validation) երբ `set` կա
+* Ինկապսուլացնում ես ներքին իրականացումը
+* Հեշտանում է արժեքներ վերցնելու և փոխելու ժամանակ սխալների մշակումը և լոգավորումը
+* Կարող ես ալարկոտ (հետաձգված) արժեքավորում անել, օրինակ եթե վերցնում ես արժեքը սերվերից
 
 
 **Վատ՝**
@@ -922,7 +921,7 @@ account.setBalance(100);
 
 
 ### Օբյեկտներում ունեցիր private անդամներ
-This can be accomplished through closures (for ES5 and below).
+Սա կարելի է իրականացնել closure֊ներով (ES5 և ցածր վարկածների համար)
 
 **Վատ՝**
 ```javascript
@@ -961,10 +960,11 @@ console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 
 ## **Կլասներ**
 ### Նախընտրիր ES2015/ES6 կլասները և ոչ ES5 ֆունկցիաները
-It's very difficult to get readable class inheritance, construction, and method
-definitions for classical ES5 classes. If you need inheritance (and be aware
-that you might not), then prefer ES2015/ES6 classes. However, prefer small functions over
-classes until you find yourself needing larger and more complex objects.
+Դասական ES5 կլասների համար շատ դժվար է գրել ընթեռնելի կլասների ժառանգում, 
+կառուցում և մեթոդների հայտարարում։ Եթե քեզ անհրաժեշտ է ժառանգում՝ նախընտրիր ES2015/ES6 կլասները։ 
+Հակառակ դեպքում նախընտրիր փոքր ֆունկցիաներ, քանի դեռ չունես ավելի մեծ և բարդ օբյեկտներ կիրառելու 
+անհրաժեշտություն։Միշտ համոզվի՛ր ,որ իրոք ժառանգության անհրաժեշտություն ունես։
+
 
 **Վատ՝**
 ```javascript
@@ -1037,11 +1037,12 @@ class Human extends Mammal {
 
 
 ### Օգտագործիր մեթոդների շղթայավորում
-This pattern is very useful in JavaScript and you see it in many libraries such
-as jQuery and Lodash. It allows your code to be expressive, and less verbose.
-For that reason, I say, use method chaining and take a look at how clean your code
-will be. In your class functions, simply return `this` at the end of every function,
-and you can chain further class methods onto it.
+Այս մոտեցումը շատ կիրառական է JavaScript֊ում և կարող ես տեսնել այն բազում 
+գրադարաններում ինչպիսիք են jQuery֊ը և Lodash֊ը: Այն քո կոդը ավելի արտահայտիչ 
+և սակավաբառ է դարձնում։ Այդ պատճառով օգտագործիր մեթոդների շղթայավորում և կտեսնես թե որքան 
+ավելի մաքուր կդառնա կոդդ։ Քո կլասսի ֆունկցիաներում վերադարձրու `this`֊ը բոլոր 
+ֆունկցիաների վերջում և հետագայում կարող ես շղթայավորել մեթոդները։
+
 
 **Վատ՝**
 ```javascript
