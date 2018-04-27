@@ -1116,22 +1116,19 @@ const car = new Car('Ford','F-150','red')
 **[⬆ վեր](#Բովանդակություն)**
 
 ### Կոմպոզիցիան նախընտրելի է ժառանգությունից 
-As stated famously in [*Design Patterns*](https://en.wikipedia.org/wiki/Design_Patterns) by the Gang of Four,
-you should prefer composition over inheritance where you can. There are lots of
-good reasons to use inheritance and lots of good reasons to use composition.
-The main point for this maxim is that if your mind instinctively goes for
-inheritance, try to think if composition could model your problem better. In some
-cases it can.
+Ինչպես նշված է հայտնի  [*Design Patterns*](https://en.wikipedia.org/wiki/Design_Patterns) գրքում,
+դու պիտի նախընտրես կոմպոզիցիան ժառանգմանը երբ կարող ես։ Կան բազում պատճառներ թե կոմպոզիցիան և թե ժառանգումը
+նախընտրելու համար։ Այս մտքի հիմնական կետը այն է, որ երբ քո միտքը բնազդորեն գնում է ժառանգում անելու, մտածես,
+որ գուցե կոմպոզիցիան կարող է ավելի լավ մոդելավորել քո խնդիրը։ Որոշ դեպքերում կարող է ․․․ 
 
-You might be wondering then, "when should I use inheritance?" It
-depends on your problem at hand, but this is a decent list of when inheritance
-makes more sense than composition:
+Դու կարող ես զարմանալ․ «Ե՞րբ օգտագործեմ ժառանգում»։ Դա կախված է քո խնդիրց, բայց ահա մի համեստ ցանկ, 
+թե երբ ժառանգումը ավելի իմաստալի է քան կոմպոզիցիան ՝
 
-1. Your inheritance represents an "is-a" relationship and not a "has-a"
-relationship (Human->Animal vs. User->UserDetails).
-2. You can reuse code from the base classes (Humans can move like all animals).
-3. You want to make global changes to derived classes by changing a base class.
-(Change the caloric expenditure of all animals when they move).
+1. Քո ժառանգումը նկարագրում է "է" (is-a) հարաբերությունը այլ ոչ "պատկանում է" (has-a) հարաբերությունը
+(Human->Animal vs. User->UserDetails)
+2. Դու կարող ես վերօգտագործել հիմնական կլասի կոդը (մարդիկ շարժվում են բոլոր կենդանիների պես)
+3. Դու ուզում ես կատարել գլոբալ փոփոխություններ ժառանգ կլասներում, փոխելով հիմնական կլասը։
+
 
 **Վատ՝**
 ```javascript
