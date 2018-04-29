@@ -1496,7 +1496,6 @@ const $ = new DOMTraverser({
 **[⬆ վեր](#Բովանդակություն)**
 
 ### Կախվածությունների շրջման սկզբունք (Dependency Inversion Principle (DIP))
-
 This principle states two essential things:
 1. High-level modules should not depend on low-level modules. Both should
 depend on abstractions.
