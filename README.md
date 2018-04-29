@@ -1180,14 +1180,10 @@ class Employee {
 
 ## **SOLID**
 ### Single Responsibility Principle (Միակ պատասխանատվության սկզբունք) (SRP)
-As stated in Clean Code, "There should never be more than one reason for a class
-to change". It's tempting to jam-pack a class with a lot of functionality, like
-when you can only take one suitcase on your flight. The issue with this is
-that your class won't be conceptually cohesive and it will give it many reasons
-to change. Minimizing the amount of times you need to change a class is important.
-It's important because if too much functionality is in one class and you modify
-a piece of it, it can be difficult to understand how that will affect other
-dependent modules in your codebase.
+Ինչպես ասված է «Մաքուր Կոդ»֊ում՝ "Կլասի փոփոխության համար պիտի լինի միայն մեկ պատճառ"։
+Շատ գաւթակղիչ է մեկ կլասի մեջ շատ ֆունկցիաներ պահելը, կարծես այն թռիչքի համար միակ ճամպրուկը լինի։ 
+Խնդիրը նրանում է, որ քո կլասը չի լինի կոնցեպտուալ կապված ու ամեն պատեհ ու անպատեհ առիթով ստիպված կլինես փոփոխալ այն։ Շատ կարևոր է կլասի ներսում փոփոխությունները հնարավորինս նվազեցնել։ Երբ դու փոփոխություններ
+ես կատարում մեծ ֆունկիոնալով կասում, դժվար ա է վերահսկել այդ փոփոխությունների բոլոր հետևանքները։
 
 **Վատ՝**
 ```javascript
@@ -1237,10 +1233,10 @@ class UserSettings {
 **[⬆ վեր](#Բովանդակություն)**
 
 ### Բացության/փակության սկզբունք (Open/Closed Principle (OCP))
-As stated by Bertrand Meyer, "software entities (classes, modules, functions,
-etc.) should be open for extension, but closed for modification." What does that
-mean though? This principle basically states that you should allow users to
-add new functionalities without changing existing code.
+Ինչպես նշել է Բերտրան Մեյերը․ «ծրագրային էությունները (կլասներ, մոդուլներ, ֆունկցիաներ, և այլն ․․․) պիտի բաց լինեն ընդլայնման համար, սակայն փակ՝ ձևափոխության համար»։ Ի՞նչ է սա նշանակում։ Այս սկզբունքը
+պնդում է, որ դու պիտի թույլատերս քո կոդի օգտատերերին<sup>*</sup> ընդլայնել հնարավորությունները առանց եղած կոդի ձևափոխության։
+
+<sup>*</sup> օգտատերերը այստեղ մյուս ծրագրավորողներն են, ովքեր օգտագործում են քո կոդային բազան։
 
 **Վատ՝**
 ```javascript
