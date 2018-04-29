@@ -1579,20 +1579,13 @@ inventoryTracker.requestItems();
 **[⬆ վեր](#բովանդակություն)**
 
 ## **տեստավորում**
-Testing is more important than shipping. If you have no tests or an
-inadequate amount, then every time you ship code you won't be sure that you
-didn't break anything. Deciding on what constitutes an adequate amount is up
-to your team, but having 100% coverage (all statements and branches) is how
-you achieve very high confidence and developer peace of mind. This means that
-in addition to having a great testing framework, you also need to use a
-[good coverage tool](http://gotwarlost.github.io/istanbul/).
+Տեստավորումը շատ կարևոր է։ Եթե դու չունես տեստերի բավարար քանակություն, ապա չէս կարող վստահ լինել, որ վերջին փոփոխություններից հետո ոչինչ չի փչացել։
 
-There's no excuse to not write tests. There are [plenty of good JS test frameworks](http://jstherightway.org/#testing-tools), so find one that your team prefers.
-When you find one that works for your team, then aim to always write tests
-for every new feature/module you introduce. If your preferred method is
-Test Driven Development (TDD), that is great, but the main point is to just
-make sure you are reaching your coverage goals before launching any feature,
-or refactoring an existing one.
+Տեստերի ադեկվատ քանակը կորոշի թիմը, սակայն կոդի 100%-ոց ծածկվածությունը տեստերով ավելացնում է վստահությունը և մտքի խաղաղությունը։
+
+Սա նշանակում, որ տեստային լավ ֆրեյմվորք ունենալուն զուգահեռ քեզ անհրաժեշտ կլինի օգտագործել նաև լավ [ծածկույթային գործիք](http://gotwarlost.github.io/istanbul/):
+
+Տեստեր չգրելու համար ոչ մի արդարացում չկա։ Կան բազում տեստավորման [ֆրեյմվորքներ](http://jstherightway.org/#testing-tools), այնպես, որ գտիր այն մեկը, որը հարմար է քո թիմին։ Երբ կգտնես հարմար մեկը, նպատակադրված գրիր տեստեր ցանկցած նոր մոդուլի կամ ֆունկցիայի համար։ Եթե քո նախընտրած մեթոդը "Տեստերով Առաջնորդվող Ծրագրավորումն է" (Test Driven Development (TDD)), դա լավ է, բայց հիմնական կետը դա համոզված լինելն է, որ ամեն ինչ աշխատում է այնպես ինչպես պիտի աշխատեր, ցանկացած նոր հնարավորություն ավելացնելուց կամ եղած կոդը վերափոխելուց հետո։
 
 ### Ամեն տեստին միակ պարզ գաղափար
 
@@ -1647,8 +1640,7 @@ describe('MakeMomentJSGreatAgain', () => {
 
 ## **Concurrency**
 ### Օգտագործիր փրոմիսներ(Promises), ոչ քալբեքներ(callback)
-Callbacks aren't clean, and they cause excessive amounts of nesting. With ES2015/ES6,
-Promises are a built-in global type. Use them!
+Քալբեքները պարզ չեն և ստեղծում են մեծաքանակ ավելորդ ներդրվածություններ։ ES2015/ES6֊ով կարող եք օգտագործել Promises֊ներ, որոնք արդեն գլոբալ տիպ են։ Օգտագործի՛ր դրանք։
 
 **Վատ՝**
 ```javascript
@@ -1691,11 +1683,7 @@ get('https://en.wikipedia.org/wiki/Robert_Cecil_Martin')
 **[⬆ վեր](#բովանդակություն)**
 
 ### Async/Await փրոմիսներից ավելի հասկանալի է
-Promises are a very clean alternative to callbacks, but ES2017/ES8 brings async and await
-which offer an even cleaner solution. All you need is a function that is prefixed
-in an `async` keyword, and then you can write your logic imperatively without
-a `then` chain of functions. Use this if you can take advantage of ES2017/ES8 features
-today!
+Promises֊ը քալբեքների լավ այլընտրանք են, սակայն ES2017/ES8֊ը իր հետ բերել է async և await, որոնք ավելի մաքուր լուծումներ են առաջարկում։ Քեզ միայն անհրաժեշտ է ֆունկցիաների սահմանումը սկսել `async` բառով և դու կարող ես գրել քո ֆունկցիայի տրամաբանությունը առանց `then` շղթաների։
 
 **Վատ՝**
 ```javascript
