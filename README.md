@@ -1,8 +1,6 @@
 # clean-code-javascript
 
- :heavy_exclamation_mark: թարգմանությունը ընթացքի մեջ է, սակայն դուք արդեն կարող եք կարդալ որոշ հատվածներ։ Նաև շատ բան կարելի է հասկանալ կոդի կտորների *Լավ/Վատ* համեմատականներից։
- 
- :heavy_exclamation_mark: թարգմանությունը ունի թերություններ, սխալներ և վրիպակներ։ Խմբագրումները, ուղղումները և առաջարկները բնականաբար ընդունվում են ։)
+:heavy_exclamation_mark: թարգմանությունը ունի թերություններ, սխալներ և վրիպակներ։ Խմբագրումները, ուղղումները և առաջարկները բնականաբար ընդունվում են ։)
 
 ## բովանդակություն
   1. [Ներածություն](#ներածություն)
@@ -1722,15 +1720,11 @@ async function getCleanCodeArticle() {
 
 
 ## **սխալների մշակում**
-Thrown errors are a good thing! They mean the runtime has successfully identified when something in your program has gone wrong and it's letting you know by stopping function execution on the current stack, killing the process (in Node), and notifying you in the console with a stack trace.
+Գցված սխալները լավ բան են։ Դրանք նշանակում են որ ծրագրի աշխատանքի ժամանակ ինչ որ բան սխալ է գնացել և հնարավորություն են տալիս կանգնեցնել ֆունկցիայի կատարումը տվյալ սթեքում, սպանել պրոցեսը (Node-ում), և ծանուցել քեզ կոնսոլում  stack trace ֊ով։
 
 ### Մի անտեսիր բռնված սխալները
-Doing nothing with a caught error doesn't give you the ability to ever fix
-or react to said error. Logging the error to the console (`console.log`)
-isn't much better as often times it can get lost in a sea of things printed
-to the console. If you wrap any bit of code in a `try/catch` it means you
-think an error may occur there and therefore you should have a plan,
-or create a code path, for when it occurs.
+Բռնված սխալների հետ ոչինչ չանելը քեզ զրկում է սխալը ուղղելու և տվյալ սխալին արձագանքելու հնարավորությունից։
+Սխալները կոնսոլում տպելը (`console.log`) ավելի վատ է, քանի որ կարող ես խճճվել կոնսոլում տպված հաղորդագրությունների ծովում։ Եթե կոդիդ որևէ մասը «փաթաթես» `try/catch`֊երով, դա կնշանակի, որ դու մտածում ես, որ սխալը կարող է ի հայտ գալ այդ մասում և դու ունես պլան ինչ անել այդ իրավիճակում։ 
 
 **Վատ՝**
 ```javascript
@@ -1757,8 +1751,7 @@ try {
 ```
 
 ### Մի անտեսիր մերժված փրոմիսները
-For the same reason you shouldn't ignore caught errors
-from `try/catch`.
+Նույն պատճառով ինչ `try/catch`֊ի ժամանակ։
 
 **Վատ՝**
 ```javascript
@@ -1792,19 +1785,11 @@ getdata()
 
 
 ## **ֆորմատավորում**
-Formatting is subjective. Like many rules herein, there is no hard and fast
-rule that you must follow. The main point is DO NOT ARGUE over formatting.
-There are [tons of tools](http://standardjs.com/rules.html) to automate this.
-Use one! It's a waste of time and money for engineers to argue over formatting.
+Ֆորմատավորումը սուբյեկտիվ է։ Ինչպես շատ այստեղի կանոնները, չկա կոշտ և արագ կանոն որին պիտի հետևես։ Կարևոր պայմանը ֆորմատավորման մասին չվիճելն է։ Կան [բազում գործիքներ](http://standardjs.com/rules.html), որոնք ավտոմատացնում են այն։ Օգտագործի՛ր մեկն ու մեկը։ Վիճելը ծրագրավորողների ժամանակի և գումարի անիմաստ վատնում է։
+Այն բաների համար, որոնք ավտոմատ ֆորմատավորման գործիքների միջոցով չէն լուծվում (ինդենտացիան, թաբեր vs բացատներ,կրկնակի չակերտներ vs չակերտներ, և այլն ․․․), նայիր հետևյալ խորհուրդները։
 
-For things that don't fall under the purview of automatic formatting
-(indentation, tabs vs. spaces, double vs. single quotes, etc.) look here
-for some guidance.
-
-### Use consistent capitalization
-JavaScript is untyped, so capitalization tells you a lot about your variables,
-functions, etc. These rules are subjective, so your team can choose whatever
-they want. The point is, no matter what you all choose, just be consistent.
+### Օգտագործիր հետևողական մեծատառացում (capitalization)
+JavaScript֊ը տիպավորված չի․ մեծատառացումը քո փոփոխականների, ֆունկցիաների և այլնի մասին շատ բան կարող է պատմել։ Այս կանոները սուբյեկտիվ են․ քո թիմը կարող է ընտրել այլ սկզբունքներ։ Կարևոր չի թե ինչ կընտրես, կարևորը, որ լինես հետևողական։
 
 **Վատ՝**
 ```javascript
@@ -1838,10 +1823,9 @@ class Alpaca {}
 **[⬆ վեր](#բովանդակություն)**
 
 
-### Function callers and callees should be close
-If a function calls another, keep those functions vertically close in the source
-file. Ideally, keep the caller right above the callee. We tend to read code from
-top-to-bottom, like a newspaper. Because of this, make your code read that way.
+### Ֆունկցիաների հայտարարումները և կանչերը դիր իրար մոտիկ 
+Եթե մի ֆունկցիան կանչում է մյուսին, պահիր այդ ֆունկցիաները  
+ուղղահայաց իրար մոտիկ։ Իդեալական տարբերակը կլինի, եթե կանչողը կանչվողի անմիջապես վերևում լինի։ Մենք կարդում ենք կոդը վերից֊վար, թերթի պես։ Այսպես կոդդ ավելի հեշտ կկարդացվի։
 
 **Վատ՝**
 ```javascript
@@ -1924,8 +1908,8 @@ review.perfReview();
 **[⬆ վեր](#բովանդակություն)**
 
 ## **մեկնաբանություններ**
-### Only comment things that have business logic complexity.
-Comments are an apology, not a requirement. Good code *mostly* documents itself.
+### Մեկնաբանիր միայն այն մասերը, որոնք բիզնես տրամաբանության բարդություններ են պարունակում
+Մեկնաբանությունը արդարացում են, ոչ պահանջ։ Լավ կոդը *առավելապես* մեկնաբանում է ինքն իրեն։
 
 **Վատ՝**
 ```javascript
@@ -1967,8 +1951,8 @@ function hashIt(data) {
 ```
 **[⬆ վեր](#բովանդակություն)**
 
-### Don't leave commented out code in your codebase
-Version control exists for a reason. Leave old code in your history.
+### Մի պահիր մեկնաբանած կոդի կտորները քո կոդում։
+Այդպիսի բաների համար կա վարկածների կառավարման համակարեր(version control)։ Թող հին կոդը պատմության մեջ։
 
 **Վատ՝**
 ```javascript
@@ -1984,9 +1968,9 @@ doStuff();
 ```
 **[⬆ վեր](#բովանդակություն)**
 
-### Don't have journal comments
-Remember, use version control! There's no need for dead code, commented code,
-and especially journal comments. Use `git log` to get history!
+### Մի գրիր օրագրային մեկնաբանություններ
+Հիշի՛ր, օգտագործիր վարկածի կառավարման համակարգեր։ Մեռած կոդը, մեկնաբանած կոդը և առավելապես օրագրային մեկնաբանությունները պահելու ոչ մի անհրաժեշտություն չկա։ 
+Պատմությունը տեսնելու համար օգտվիր `git log`֊ից։
 
 **Վատ՝**
 ```javascript
@@ -2009,9 +1993,8 @@ function combine(a, b) {
 ```
 **[⬆ վեր](#բովանդակություն)**
 
-### Avoid positional markers
-They usually just add noise. Let the functions and variable names along with the
-proper indentation and formatting give the visual structure to your code.
+### Խուսափիր դիրքային նշումներից
+Դրանք հաճախ ավելացնում են «աղմուկ»: Թող ֆունկցիաների և փոփոխականների անունները ճիշտ ֆորմատավորման հետ միասին ստեղծեն ծրագրիդ վիզուալ կառուցվածքը։
 
 **Վատ՝**
 ```javascript
