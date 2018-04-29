@@ -1262,22 +1262,22 @@ class HttpRequester {
   fetch(url) {
     if (this.adapter.name === 'ajaxAdapter') {
       return makeAjaxCall(url).then((response) => {
-        // transform response and return
+        // տրանսֆորմացնել պատասխանը և վերադարձնել 
       });
     } else if (this.adapter.name === 'httpNodeAdapter') {
       return makeHttpCall(url).then((response) => {
-        // transform response and return
+        // տրանսֆորմացնել պատասխանը և վերադարձնել
       });
     }
   }
 }
 
 function makeAjaxCall(url) {
-  // request and return promise
+  // հարցում անել և վերադարձնել promise
 }
 
 function makeHttpCall(url) {
-  // request and return promise
+  // հարցում անել և վերադարձնել promise
 }
 ```
 
@@ -1290,7 +1290,7 @@ class AjaxAdapter extends Adapter {
   }
 
   request(url) {
-    // request and return promise
+    // հարցում անել և վերադարձնել promise
   }
 }
 
@@ -1301,7 +1301,7 @@ class NodeAdapter extends Adapter {
   }
 
   request(url) {
-    // request and return promise
+    // հարցում անել և վերադարձնել promise
   }
 }
 
@@ -1312,7 +1312,7 @@ class HttpRequester {
 
   fetch(url) {
     return this.adapter.request(url).then((response) => {
-      // transform response and return
+      // տրանսֆորմացնել պատասխանը և վերադարձնել
     });
   }
 }
@@ -1320,19 +1320,12 @@ class HttpRequester {
 **[⬆ վեր](#Բովանդակություն)**
 
 ### Լիսկովի փոխարինման սկզբունքը (Liskov Substitution Principle (LSP))
-This is a scary term for a very simple concept. It's formally defined as "If S
-is a subtype of T, then objects of type T may be replaced with objects of type S
-(i.e., objects of type S may substitute objects of type T) without altering any
-of the desirable properties of that program (correctness, task performed,
-etc.)." That's an even scarier definition.
+Սա շատ վախենալու տերմին է, որը հասարակ գաղափար է նկարագրում։ Ֆորմալ ձևակերպումը հետևյալն է․ «Եթե S-ը հանդիսանում է T-ի ենթատիպը, ապա T տիպի
+օբյեկտները կարող են փոխարինվել S տիպի օբյեկտներով» (այսինքն S տիպի
+օբյեկտները փոխարինում են T տիպի օբյեկտներին) առանց ծրագրի կարևոր հատկանիշների փոփոխության (ճշգրտություն, կատարվող առաջադրանք և այլն ․․․)
 
-The best explanation for this is if you have a parent class and a child class,
-then the base class and child class can be used interchangeably without getting
-incorrect results. This might still be confusing, so let's take a look at the
-classic Square-Rectangle example. Mathematically, a square is a rectangle, but
-if you model it using the "is-a" relationship via inheritance, you quickly
-get into trouble.
-
+Լավագույն բացատրությունը այն է, որ եթե դու ունես մայրական և ռառանգ կլասներ, ապա մայրական և ժառանգ կլասները փոխարինելի են և փոխարինումը չի բերի սխալ արդյունքների։ Սա գուցե դեռ անհասկանալի է․ արի նայենք դասական Քառակուսի֊ՈՒղղանկյուն օրինակը։ Մաթեմատիկայի տեսանկյունից քառակուսին ուղղանկյուն է, և եթե դու մոդելավորես դրանք "է" (is-a) հարաբերությամբ ժառանգման միջոցով, կընկնես անախորժությունների մեջ։
+ 
 **Վատ՝**
 ```javascript
 class Rectangle {
@@ -1378,7 +1371,7 @@ function renderLargeRectangles(rectangles) {
   rectangles.forEach((rectangle) => {
     rectangle.setWidth(4);
     rectangle.setHeight(5);
-    const area = rectangle.getArea(); // BAD: Returns 25 for Square. Should be 20.
+    const area = rectangle.getArea(); // Վատ: Վերադարձնում է 25  քառակուսու համար (Square). պիտի լինի 20.
     rectangle.render(area);
   });
 }
@@ -1435,19 +1428,12 @@ renderLargeShapes(shapes);
 **[⬆ վեր](#Բովանդակություն)**
 
 ### Ինտերֆեյսի բաժանման սկզբունք (Interface Segregation Principle (ISP))
-JavaScript doesn't have interfaces so this principle doesn't apply as strictly
-as others. However, it's important and relevant even with JavaScript's lack of
-type system.
+JavaScript֊ը չունի ինտերֆեյսներ և այս սկզբունքը նույն խստությամբ չի կիրառվում։ Ամեն դեպքում այն կարևոր և էական է նույնիսկ JavaScript's֊ում տիպերի բացակայության իրավիճակում։
 
-ISP states that "Clients should not be forced to depend upon interfaces that
-they do not use." Interfaces are implicit contracts in JavaScript because of
-duck typing.
+ԻԲՍ (ISP) նշում է որ «օգտատերերը չպետք է ստիպված լինեն կախված լինել այն ինտերֆեյսներից, որոնք նրանք չեն օգտագործում»: Ինտերֆեյսներն անուղղակի պայմանագրեր են JavaScript-ում տիպերի համակարգի պատճառով:
 
-A good example to look at that demonstrates this principle in JavaScript is for
-classes that require large settings objects. Not requiring clients to setup
-huge amounts of options is beneficial, because most of the time they won't need
-all of the settings. Making them optional helps prevent having a
-"fat interface".
+Այս սկզբունքը ցուցադրող լավ օրինակ է այն դեպքը, երբ կլասը պահանջում է
+կարգավորումների մեծ օբյեկտ։ Օգտատերերին պետք է ազատել մեծաքանակ, այդ պահին իրենց համար ոչ անհրաժեշտ կարգավորումները գրելու անհրաժեշտությունից, քանի որ հաճախ, նրանք չունեն այդ բոլոր կարգավորումների կարիքը։ Այս կարգավորումները ընտրովի դարձնելը օգնում է խուսափել "չաղ ինտերֆեյս" ունենալուց։
 
 **Վատ՝**
 ```javascript
