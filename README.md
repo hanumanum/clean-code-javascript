@@ -6,19 +6,19 @@
 
 ## բովանդակություն
   1. [Ներածություն](#ներածություն)
-  2. [Փոփոխականներ](#Փոփոխականներ)
-  3. [Ֆունկցիաներ](#Ֆունկցիաներ)
-  4. [Օբյեկտներ և տվյալների ստրուկտուրաներ](#Օբյեկտներ-և-տվյալների-ստրուկտուրաներ)
-  5. [Կասներ](#Կլասներ)
+  2. [Փոփոխականներ](#փոփոխականներ)
+  3. [Ֆունկցիաներ](#ֆունկցիաներ)
+  4. [Օբյեկտներ և տվյալների ստրուկտուրաներ](#օբյեկտներ-և-տվյալների-ստրուկտուրաներ)
+  5. [Կասներ](#կլասներ)
   6. [SOLID](#solid)
-  7. [Տեստավորում](#Տեստավորում)
+  7. [Տեստավորում](#տեստավորում)
   8. [Concurrency](#concurrency)
-  9. [Սխալների մշակում](#Սխալների-մշակում)
-  10. [Ֆորմատավորում](#Ֆորմատավորում)
-  11. [Մեկնաբանություններ](#Մեկնաբանություններ)
-  12. [Թարգմանություններ](#Թարգմանություններ)
+  9. [Սխալների մշակում](#սխալների-մշակում)
+  10. [Ֆորմատավորում](#ֆորմատավորում)
+  11. [Մեկնաբանություններ](#մեկնաբանություններ)
+  12. [Թարգմանություններ](#թարգմանություններ)
 
-## Ներածություն
+## ներածություն
 ![Humorous image of software quality estimation as a count of how many expletives
 you shout when reading code](http://www.osnews.com/images/comics/wtfm.jpg)
 
@@ -33,7 +33,7 @@ you shout when reading code](http://www.osnews.com/images/comics/wtfm.jpg)
 ծրագրերի համար։ Խարազանի՛ր ծրագրերը։
 
 
-## **Փոփոխականներ**
+## **փոփոխականներ**
 ###  Օգտագործիր իմաստալից և արտասանելի փոփոխականների անուններ
 
 **Վատ:**
@@ -190,7 +190,7 @@ function createMicrobrewery(name = 'Hipster Brew Co.') {
 ```
 **[⬆ վեր](#բովանդակություն)**
 
-## **Ֆունկցիաներ**
+## **ֆունկցիաներ**
 ### Ֆունկցիաների արգումենտներ (իդեալական տարբերակում 2 կամ պակաս)
 Ֆունկցիայի արգումենտների քանակը սահմանափակելը շատ կարևոր է, որովհետև դա հեշտացնում է 
 ֆունկցիայի աշխատանքի տեստավորումը։ Երեքից ավել արգումենտներ ունենալը բերում է այն  տարբերակների բազմացմանը
@@ -862,7 +862,7 @@ inventoryTracker('apples', req, 'www.inventory-awesome.io');
 ```
 **[⬆ վեր](#բովանդակություն)**
 
-## **Օբյեկտներ և տվյալների ստրուկտուրաներ**
+## **օբյեկտներ և տվյալների ստրուկտուրաներ**
 ### Օգտագործիր getter֊ներ և setter-ներ
 Օբյեկնտերում տվյալներին հասնելու համար getter֊ներ և setter֊ներ օգտագործելը ավելի
 լավ է, քան օբյեկտի հատկանիշներին անմիջապես դիմելը։ Ինչու՞։ Ահա պատճառների մի
@@ -958,7 +958,7 @@ console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 **[⬆ վեր](#բովանդակություն)**
 
 
-## **Կլասներ**
+## **կլասներ**
 ### Նախընտրիր ES2015/ES6 կլասները և ոչ ES5 ֆունկցիաները
 Դասական ES5 կլասների համար շատ դժվար է գրել ընթեռնելի կլասների ժառանգում, 
 կառուցում և մեթոդների հայտարարում։ Եթե քեզ անհրաժեշտ է ժառանգում՝ նախընտրիր ES2015/ES6 կլասները։ 
@@ -1578,7 +1578,7 @@ inventoryTracker.requestItems();
 ```
 **[⬆ վեր](#բովանդակություն)**
 
-## **Տեստավորում**
+## **տեստավորում**
 Testing is more important than shipping. If you have no tests or an
 inadequate amount, then every time you ship code you won't be sure that you
 didn't break anything. Deciding on what constitutes an adequate amount is up
@@ -1733,7 +1733,7 @@ async function getCleanCodeArticle() {
 **[⬆ վեր](#բովանդակություն)**
 
 
-## **Սխալների մշակում**
+## **սխալների մշակում**
 Thrown errors are a good thing! They mean the runtime has successfully
 identified when something in your program has gone wrong and it's letting
 you know by stopping function execution on the current stack, killing the
@@ -1806,7 +1806,7 @@ getdata()
 **[⬆ վեր](#բովանդակություն)**
 
 
-## **Ֆորմատավորում**
+## **ֆորմատավորում**
 Formatting is subjective. Like many rules herein, there is no hard and fast
 rule that you must follow. The main point is DO NOT ARGUE over formatting.
 There are [tons of tools](http://standardjs.com/rules.html) to automate this.
@@ -1938,7 +1938,7 @@ review.perfReview();
 
 **[⬆ վեր](#բովանդակություն)**
 
-## **Մեկնաբանություններ**
+## **մեկնաբանություններ**
 ### Only comment things that have business logic complexity.
 Comments are an apology, not a requirement. Good code *mostly* documents itself.
 
@@ -2059,9 +2059,8 @@ const actions = function() {
 ```
 **[⬆ վեր](#բովանդակություն)**
 
-## Թարգմանություններ
-
-This is also available in other languages:
+## թարգմանություններ
+Հասնաելի է նաև հետևյալ լեզուներով `
 
   - ![br](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Brazil.png) **Brazilian Portuguese**: [fesnt/clean-code-javascript](https://github.com/fesnt/clean-code-javascript)
   - ![es](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Uruguay.png) **Spanish**: [andersontr15/clean-code-javascript](https://github.com/andersontr15/clean-code-javascript-es)
